@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1570839817 source:c:\users\zedex\desktop\qwirkle\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+	<time.h>
+	<string.h>
+
