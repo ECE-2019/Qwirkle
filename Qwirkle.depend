@@ -1,8 +1,11 @@
 # depslib dependency file v1.0
-1570843764 source:c:\users\zedex\desktop\qwirkle\main.c
+1571008451 source:c:\users\zedex\desktop\qwirkle\main.c
 	<stdio.h>
 	<stdlib.h>
+	<conio.h>
 	<windows.h>
 	<time.h>
 	<string.h>
+
+1570990851 source:c:\users\zedex\desktop\qwirkle\untitled1.c
 
