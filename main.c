@@ -12,7 +12,7 @@ typedef struct tuile
     int color;
     char * form;
     int score;
-} Tuile;
+} tuile;
 
 typedef struct player
 {
@@ -21,7 +21,7 @@ typedef struct player
     int score_play;
     struct tuile hand[6];
 
-} Player;
+} player;
 
 typedef struct game
 {
@@ -43,7 +43,7 @@ void player_number();
 struct tuile draw_tuile();
 void dialog(char * message, int posx, int posy);
 void moove_tuile(int posx, int posy, struct tuile tuile);
-void set_score_play(struct player * player);
+void set_score_play(struct player * player, struct tuile tuile);
 
 int main()
 {
@@ -254,15 +254,13 @@ void player_name(int player_nb){
 
 }
 
-void set_sideMenu(struct  player * player){
-    int i = 1,j;
+void display_player_info(struct  player * player, int player_nb){
+    int j;
     size_t length = sizeof(player->hand) / sizeof(player->hand[0]);
     set_coord(15,1);
-    printf("Player %d",i);
+    printf("player %d",player_nb+1);
     set_coord(15,2);
     printf("%s", player->pseudo);
-    set_coord(15,4);
-    puts("Main");
     set_coord(15,5);
     for(j = 0; j < length; j++){
         //draw_tuile();
@@ -276,148 +274,159 @@ void set_sideMenu(struct  player * player){
         printf("%d ", player->hand[j].score);
     }
     color(15,0);
-    set_coord(15,8);
-    puts("Coup");
     set_coord(15,9);
     //
-    set_coord(15,11);
-    puts("Score coup");
     set_coord(15,12);
     printf("%d",player->score_play);
-    set_coord(15,14);
-    puts("Score total");
     set_coord(15,15);
     printf("%d",player->score_game);
 }
 
-void game(struct player * players){
-
-
-    int i = 1;
-
-
+void display_game(){
     system("cls");
     puts(" abcdefghijklmopqrstuwxyz\na\nb\nc\nd\ne\nf\ng\nh\ni\nj\nk\nl");
     //puts(" a b c d e f g h i j k l m o p q r s t u w x y z\na\nb\nc\nd\ne\nf\ng\nh\ni\nj\nk\nl");
+    set_coord(15,1);
+    printf("player");
+    set_coord(15,4);
+    puts("Main");
+    set_coord(15,8);
+    puts("Coup");
+    set_coord(15,11);
+    puts("Score coup");
+    set_coord(15,14);
+    puts("Score total");
+}
 
-    set_sideMenu(&players[i]);
+void game(struct player * players){
+    system("cls");
+    size_t length_players = 2;
+    display_game();
+    int i;
+    for(i = 0; i < length_players; i++){
+        display_player_info(&players[i], i);
+        int key = -1;
+        while(key != 1){
 
-    //print choisissz une tuile
-    set_coord(15,5);
-    color(0,players[i].hand[0].color);
-    printf("%c", players[i].hand[0].form);
-    color(15,0);
-    set_coord(15,5);
+            //print choisissz une tuile
+            set_coord(15,5);
+            color(0,players[i].hand[0].color);
+            printf("%c", players[i].hand[0].form);
+            color(15,0);
+            set_coord(15,5);
 
-    int key = -1, position = 15;
+            key = -1;
+            int position = 15;
 
-    dialog("Choisissez une tuile:", 15, 5);
+            dialog("Choisissez une tuile:", 15, 5);
 
-    //choose tuile
+            //choose tuile
+            while(key != 0 && key != 1){
+                if(kbhit()){
+                    get_key(&key);
+                    //right
+                    if(key == 6 && position < 20){
+                        //inverse les couleurs la position
+                        set_coord(position,5);
+                        color(players[i].hand[position-15].color,0);
+                        printf("%c", players[i].hand[position-15].form);
+                        //deplacement
+                        position++;
+                        set_coord(position,5);
+                        //inverse les couleurs
+                        color(0,players[i].hand[position-15].color);
+                        printf("%c", players[i].hand[position-15].form);
+                        //reset position
+                        set_coord(position,5);
+                    //left
+                    }else if(key == 4 && position > 15){
+                        set_coord(position,5);
+                        color(players[i].hand[position-15].color,0);
+                        printf("%c", players[i].hand[position-15].form);
+                        position--;
+                        set_coord(position,5);
+                        color(0,players[i].hand[position-15].color);
+                        printf("%c", players[i].hand[position-15].form);
+                        set_coord(position,5);
+                    }else if(key == 1){
+                        key = set_tuile(players[i], position);
+                    }
+                }
+            }
+            color(15,0);
+        }
+    }
+    //fin du tour
+    system("cls");
+    printf("Fin du tour");
+
+}
+
+int set_tuile(struct player player, int position){
+    struct tuile tuile_selected = player.hand[position-15];
+    struct game game;
+    int posx = 10, posy = 10, key = -1;
+
+    dialog("Placez une tuile:", posx, posy);
+
     while(key != 0 && key != 1){
+        //put tuile on field
+        set_coord2(posx,posy);
+        color(tuile_selected.color,0);
+        printf("%c", tuile_selected.form);
+        set_coord2(posx,posy);
+
         if(kbhit()){
             get_key(&key);
             //right
-            if(key == 6 && position < 20){
-                //inverse les couleurs la position
-                set_coord(position,5);
-                color(players[i].hand[position-15].color,0);
-                printf("%c", players[i].hand[position-15].form);
-                //deplacement
-                position++;
-                set_coord(position,5);
-                //inverse les couleurs
-                color(0,players[i].hand[position-15].color);
-                printf("%c", players[i].hand[position-15].form);
-                //reset position
-                set_coord(position,5);
+            if(key == 6 && posx < 24){
+                set_coord2(posx,posy);
+                printf(" ");
+                posx++;
+                moove_tuile(posx, posy, tuile_selected);
+                set_score_play(&player, tuile_selected);
             //left
-            }else if(key == 4 && position > 15){
-                set_coord(position,5);
-                color(players[i].hand[position-15].color,0);
-                printf("%c", players[i].hand[position-15].form);
-                position--;
-                set_coord(position,5);
-                color(0,players[i].hand[position-15].color);
-                printf("%c", players[i].hand[position-15].form);
-                set_coord(position,5);
+            }else if(key == 4 && posx > 1){
+                set_coord2(posx,posy);
+                printf(" ");
+                posx--;
+                moove_tuile(posx, posy, tuile_selected);
+                set_score_play(&player, tuile_selected);
+            //up
+            }else if(key == 8 && posy > 1){
+                set_coord2(posx,posy);
+                printf(" ");
+                posy--;
+                moove_tuile(posx, posy, tuile_selected);
+                set_score_play(&player, tuile_selected);
+            //down
+            }else if(key == 2 && posy < 12){
+                set_coord2(posx,posy);
+                printf(" ");
+                posy++;
+                moove_tuile(posx, posy, tuile_selected);
+                set_score_play(&player, tuile_selected);
             }
         }
     }
-    color(15,0);
-
-
-    //moove tuile
     if(key == 0){
-        exit(0);
+        set_coord2(posx,posy);
+        printf(" "); //remove tuile and put older one
     }
-
-    if(key == 1){
-
-        key = -1;
-        struct tuile tuile_selected = players[i].hand[position-15];
-        struct game game;
-
-        int posx = 10, posy = 10;
-
-        dialog("Placez une tuile:", posx, posy);
-
-        while(key != 0 && key != 1){
-            //put tuile on field
-            set_coord2(posx,posy);
-            color(tuile_selected.color,0);
-            printf("%c", tuile_selected.form);
-            set_coord2(posx,posy);
-
-            if(kbhit()){
-                get_key(&key);
-                //right
-                if(key == 6 && posx < 24){
-                    set_coord2(posx,posy);
-                    printf(" ");
-                    posx++;
-                    moove_tuile(posx, posy, tuile_selected);
-                    set_score_play(&players[i]);
-                //left
-                }else if(key == 4 && posx > 1){
-                    set_coord2(posx,posy);
-                    printf(" ");
-                    posx--;
-                    moove_tuile(posx, posy, tuile_selected);
-                    set_score_play(&players[i]);
-                //up
-                }else if(key == 8 && posy > 1){
-                    set_coord2(posx,posy);
-                    printf(" ");
-                    posy--;
-                    moove_tuile(posx, posy, tuile_selected);
-                    set_score_play(&players[i]);
-                //down
-                }else if(key == 2 && posy < 12){
-                    set_coord2(posx,posy);
-                    printf(" ");
-                    posy++;
-                    moove_tuile(posx, posy, tuile_selected);
-                    set_score_play(&players[i]);
-                }
-            }
-        }
-
-    }
-
-    //fin du tour
-
-    while(1){
-
-    }
+    return key;
 
 }
-int get_score_play(){
- return 0;
+
+int get_score_play(struct tuile tuile){
+    int score_play = 0;
+    score_play = tuile.score;
+
+
+    return score_play;
 }
 
-void set_score_play(struct player * player){
-    player->score_play = get_score_play();
+void set_score_play(struct player * player, struct tuile tuile){
+    player->score_play = get_score_play(tuile);
     set_coord(15,12);
     printf("%d   ",player->score_play);
 }
