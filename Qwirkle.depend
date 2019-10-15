@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1571147617 source:c:\users\zedex\desktop\qwirkle\main.c
+1571185320 source:c:\users\zedex\desktop\qwirkle\main.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>

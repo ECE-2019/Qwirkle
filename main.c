@@ -16,19 +16,19 @@ typedef struct tuile
 
 typedef struct player
 {
-    char * pseudo[15];
+    char pseudo[15];
     int score_game;
     int score_play;
     struct tuile hand[6];
-
 } player;
 
 typedef struct game
 {
-    struct player players[5];
+    struct player * players;
     struct tuile pioche[108];
     struct tuile field[12][26];
-
+    int mode;
+    int nb_player;
 } Game;
 
 
@@ -38,7 +38,7 @@ void game(struct player * players);
 void set_coord(int x, int y);
 void get_key(int * key);
 void logger(char * message, int position);
-void player_name(int player_nb);
+void player_name();
 void player_number();
 struct tuile draw_tuile();
 void dialog(char * message, int posx, int posy);
@@ -148,11 +148,11 @@ void menu()
 
     system("cls");
     puts("\n***********************MENU***********************\n");
-    puts("\tDemarrer une nouvelle partie");
-    puts("\tReprendre la partie en cours");
-    puts("\tConsulter les scores");
-    puts("\tConsulter les options");
-    puts("\tQuitter le jeu");
+    puts("\t Demarrer une nouvelle partie");
+    puts("\t Reprendre la partie en cours");
+    puts("\t Consulter les scores");
+    puts("\t Consulter les options");
+    puts("\t Quitter le jeu");
     set_coord(3,position);
     printf(">");
     set_coord(3,position);
@@ -183,7 +183,7 @@ void menu()
     }else if(key == 1){
         switch(position){
         case 3:
-            player_number();
+            new_game();
             break;
         case 4:
             printf("load_game();");
@@ -201,12 +201,66 @@ void menu()
     }
 }
 
-void player_number(){
+void new_game(){
+
+    struct game game;
+
+    mode(&game);
+    player_number(&game);
+    player_name(&game);
+    display_game();
+
+}
+
+void mode(struct game * game){
+    int key = -1, position = 3;
+
+    system("cls");
+    puts("\n*********************Choisissez un mode*********************\n");
+    puts("\t Dégradé (contour)");
+    puts("\t Normal");
+    set_coord(3,position);
+    printf(">");
+    set_coord(3,position);
+
+    while(key != 0 && key != 1){
+        if(kbhit()){
+            get_key(&key);
+            if(key == 2 && position < 4){
+                set_coord(3,position);
+                printf(" ");
+                position++;
+                set_coord(3,position);
+                printf(">");
+                set_coord(3,position);
+            }else if(key == 8 && position > 3){
+                set_coord(3,position);
+                printf(" ");
+                position--;
+                set_coord(3,position);
+                printf(">");
+                set_coord(3,position);
+            }
+        }
+    }
+
+    if(key == 0){
+        exit(0);
+    }else if(key == 1){
+        game->mode = 5-position;// 1-2
+    }
+
+}
+
+void player_number(struct game * game){
 
     int key = -1, position = 3;
 
     system("cls");
-    printf("\n*********************Choisissez un nombre de joueur (2-4)*********************\n\n\t2\n\t3\n\t4");
+    puts("\n*********************Choisissez un nombre de joueur (2-4)*********************\n");
+    puts("\t 2");
+    puts("\t 3");
+    puts("\t 4");
     set_coord(3,position);
     printf(">");
     set_coord(3,position);
@@ -231,27 +285,41 @@ void player_number(){
             }
         }
     }
-
     if(key == 0){
         exit(0);
     }else if(key == 1){
-        player_name(5-position);
+        // allocation de la memoire pour les struct player
+        game->players = calloc(5-position, sizeof(struct player));
+        game->nb_player = 5-position;
     }
 }
 
-void player_name(int player_nb){
+void player_name(struct game * game){
     int i;
-    struct player players[player_nb];
-
-    for(i = 0; i < player_nb; i++){
+    for(i = 0; i < game->nb_player; i++){
         system("cls");
         printf("\n***********************Pseudo du joueur %d (15 charact)***********************\n", i+1);
         set_coord(3,3);
         printf(">");
-        scanf("%s", players[i].pseudo);
+        scanf("%s", game->players[i].pseudo);
     }
-    game(players);
 
+}
+
+void display_game(){
+    system("cls");
+    puts(" abcdefghijklmopqrstuwxyz\na\nb\nc\nd\ne\nf\ng\nh\ni\nj\nk\nl");
+    //puts(" a b c d e f g h i j k l m o p q r s t u w x y z\na\nb\nc\nd\ne\nf\ng\nh\ni\nj\nk\nl");
+    set_coord(15,1);
+    printf("player");
+    set_coord(15,4);
+    puts("Main");
+    set_coord(15,8);
+    puts("Coup");
+    set_coord(15,11);
+    puts("Score coup");
+    set_coord(15,14);
+    puts("Score total");
 }
 
 void display_player_info(struct  player * player, int player_nb){
@@ -280,22 +348,6 @@ void display_player_info(struct  player * player, int player_nb){
     printf("%d",player->score_play);
     set_coord(15,15);
     printf("%d",player->score_game);
-}
-
-void display_game(){
-    system("cls");
-    puts(" abcdefghijklmopqrstuwxyz\na\nb\nc\nd\ne\nf\ng\nh\ni\nj\nk\nl");
-    //puts(" a b c d e f g h i j k l m o p q r s t u w x y z\na\nb\nc\nd\ne\nf\ng\nh\ni\nj\nk\nl");
-    set_coord(15,1);
-    printf("player");
-    set_coord(15,4);
-    puts("Main");
-    set_coord(15,8);
-    puts("Coup");
-    set_coord(15,11);
-    puts("Score coup");
-    set_coord(15,14);
-    puts("Score total");
 }
 
 void game(struct player * players){
