@@ -209,6 +209,7 @@ void new_game(){
     player_number(&game);
     player_name(&game);
     display_game();
+    display_player_info();
 
 }
 
@@ -248,15 +249,38 @@ void mode(struct game * game){
         exit(0);
     }else if(key == 1){
         game->mode = 5-position;// 1-2
+        int i, j;
+        int colors[] =  {1,12,2,14,11,8};
+        char forms[] =  {0xC9, 0xC8, 0xBB, 0xBC, 0xCB, 0xCA};
+        for(i = 0; i < 6; i++){
+            for(j = 0; j < 6; j++){
+                game->pioche[j+6*i].posx = -1;
+                game->pioche[j+6*i].posy = -1;
+                game->pioche[j+6*i].color = colors[i];
+                game->pioche[j+6*i].form = forms[j];
+            }
+        }
+        //shuffle it
+        struct tuile buf;
+        int k, random1, random2, n =35;
+        for(k = 0; k < n; k++){
+            random1 = rand()%n;
+            random2 = rand()%n;
+            //printf("%d-%c -> %d-%c\n",random1,game->pioche[random1].form, random2,game->pioche[random2].form);
+            buf = game->pioche[random1];
+            game->pioche[random1] = game->pioche[random2];
+            game->pioche[random2] = buf;
+            //printf("%d-%c -> %d-%c\n",random1,game->pioche[random1].form, random2,game->pioche[random2].form);
+
+        }
+
     }
 
 }
 
 void player_number(struct game * game){
 
-    int key = -1, position = 3;
-
-    system("cls");
+    int position = 3, key = -1;
     puts("\n*********************Choisissez un nombre de joueur (2-4)*********************\n");
     puts("\t 2");
     puts("\t 3");
