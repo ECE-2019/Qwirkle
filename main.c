@@ -140,10 +140,7 @@ void color(int color_text,int color_fond){
 }
 
 
-
-
-void menu()
-{
+void menu(){
     int key = -1, position = 3;
 
     system("cls");
@@ -204,16 +201,21 @@ void menu()
 void new_game(){
 
     struct game game;
+    int i;
 
-    mode(&game);
-    player_number(&game);
-    player_name(&game);
+    get_mode(&game);
+    get_player_number(&game);
+    get_player_name(&game);
     display_game();
-    display_player_info();
+
+    for(i = 0; i < game.nb_player; i++){
+        display_player_info(&game.players[i], i);
+        play(&game, i);
+    }
 
 }
 
-void mode(struct game * game){
+void get_mode(struct game * game){
     int key = -1, position = 3;
 
     system("cls");
@@ -271,16 +273,17 @@ void mode(struct game * game){
             game->pioche[random1] = game->pioche[random2];
             game->pioche[random2] = buf;
             //printf("%d-%c -> %d-%c\n",random1,game->pioche[random1].form, random2,game->pioche[random2].form);
-
         }
 
     }
 
 }
 
-void player_number(struct game * game){
+void get_player_number(struct game * game){
 
     int position = 3, key = -1;
+
+    system("cls");
     puts("\n*********************Choisissez un nombre de joueur (2-4)*********************\n");
     puts("\t 2");
     puts("\t 3");
@@ -313,12 +316,18 @@ void player_number(struct game * game){
         exit(0);
     }else if(key == 1){
         // allocation de la memoire pour les struct player
+        int i,j;
         game->players = calloc(5-position, sizeof(struct player));
         game->nb_player = 5-position;
+        for(i = 0; i < game->nb_player; i++){
+            for(j = 0; j < 6; j++){
+                game->players[i].hand[j] = draw_tuile();
+            }
+        }
     }
 }
 
-void player_name(struct game * game){
+void get_player_name(struct game * game){
     int i;
     for(i = 0; i < game->nb_player; i++){
         system("cls");
@@ -346,22 +355,21 @@ void display_game(){
     puts("Score total");
 }
 
-void display_player_info(struct  player * player, int player_nb){
+void display_player_info(struct player * player, int player_nb){
     int j;
-    size_t length = sizeof(player->hand) / sizeof(player->hand[0]);
-    set_coord(15,1);
-    printf("player %d",player_nb+1);
+    set_coord2(37,1);
+    printf("%d",player_nb+1);
     set_coord(15,2);
     printf("%s", player->pseudo);
     set_coord(15,5);
-    for(j = 0; j < length; j++){
+    for(j = 0; j < 6; j++){
         //draw_tuile();
         player->hand[j] = draw_tuile();
         color(player->hand[j].color,0);
         printf("%c ", player->hand[j].form);
     }
     set_coord(15,6);
-    for(j = 0; j < length; j++){
+    for(j = 0; j < 6; j++){
         color(player->hand[j].color,0);
         printf("%d ", player->hand[j].score);
     }
@@ -374,68 +382,54 @@ void display_player_info(struct  player * player, int player_nb){
     printf("%d",player->score_game);
 }
 
-void game(struct player * players){
-    system("cls");
-    size_t length_players = 2;
-    display_game();
-    int i;
-    for(i = 0; i < length_players; i++){
-        display_player_info(&players[i], i);
-        int key = -1;
+void play(struct game * game, int player_nb){
+    int i, key, position = 15, tuile_nb = 0;
+
+    dialog("Combien de tuile ?", 10, 14);
+
+    while(!(tuile_nb == 49 || tuile_nb == 50 || tuile_nb == 51)){
+        tuile_nb = getch();
+    }
+
+    for(i = 0; i < tuile_nb - 48; i++){
+        char str[34];
+        sprintf(str, "Choisissez une tuile (encore %d)", tuile_nb-48-i);
+        dialog(str, 15, 5);
+        key = -1;
+        // color reverse first tuile
         while(key != 1){
-
-            //print choisissz une tuile
-            set_coord(15,5);
-            color(0,players[i].hand[0].color);
-            printf("%c", players[i].hand[0].form);
-            color(15,0);
-            set_coord(15,5);
-
-            key = -1;
-            int position = 15;
-
-            dialog("Choisissez une tuile:", 15, 5);
-
-            //choose tuile
             while(key != 0 && key != 1){
                 if(kbhit()){
                     get_key(&key);
                     //right
                     if(key == 6 && position < 20){
-                        //inverse les couleurs la position
                         set_coord(position,5);
-                        color(players[i].hand[position-15].color,0);
-                        printf("%c", players[i].hand[position-15].form);
-                        //deplacement
+                        color(game->players[player_nb].hand[position-15].color,0);
+                        printf("%c", game->players[player_nb].hand[position-15].form);
                         position++;
                         set_coord(position,5);
-                        //inverse les couleurs
-                        color(0,players[i].hand[position-15].color);
-                        printf("%c", players[i].hand[position-15].form);
-                        //reset position
+                        color(0,game->players[player_nb].hand[position-15].color);
+                        printf("%c", game->players[player_nb].hand[position-15].form);
                         set_coord(position,5);
                     //left
                     }else if(key == 4 && position > 15){
                         set_coord(position,5);
-                        color(players[i].hand[position-15].color,0);
-                        printf("%c", players[i].hand[position-15].form);
+                        color(game->players[player_nb].hand[position-15].color,0);
+                        printf("%c", game->players[player_nb].hand[position-15].form);
                         position--;
                         set_coord(position,5);
-                        color(0,players[i].hand[position-15].color);
-                        printf("%c", players[i].hand[position-15].form);
+                        color(0,game->players[player_nb].hand[position-15].color);
+                        printf("%c", game->players[player_nb].hand[position-15].form);
                         set_coord(position,5);
                     }else if(key == 1){
-                        key = set_tuile(players[i], position);
+                        key = set_tuile(game->players[player_nb], position);
                     }
                 }
             }
             color(15,0);
         }
     }
-    //fin du tour
-    system("cls");
-    printf("Fin du tour");
-
+    //fin du tour du joueur
 }
 
 int set_tuile(struct player player, int position){
@@ -497,7 +491,6 @@ int get_score_play(struct tuile tuile){
     int score_play = 0;
     score_play = tuile.score;
 
-
     return score_play;
 }
 
@@ -545,32 +538,31 @@ struct tuile draw_tuile(){
     int colors[] =  {1,12,2,14,11,8};
     char forms[] =  {0xC8, 0xC9, 0xBB, 0xBC, 0xCA, 0xCB};
 
-    struct tuile tuile1;
-    tuile1.form = forms[rand()%form];
-    tuile1.color = colors[rand()%color];
-    switch(tuile1.color){
+    struct tuile tuile;
+    tuile.form = forms[rand()%form];
+    tuile.color = colors[rand()%color];
+    switch(tuile.color){
         case 1:
-            tuile1.score = 1;
+            tuile.score = 1;
             break;
         case 12:
-            tuile1.score = 2;
+            tuile.score = 2;
             break;
         case 2:
-            tuile1.score = 3;
+            tuile.score = 3;
             break;
         case 14:
-            tuile1.score = 4;
+            tuile.score = 4;
             break;
         case 11:
-            tuile1.score = 5;
+            tuile.score = 5;
             break;
         case 8:
-            tuile1.score = 6;
+            tuile.score = 6;
             break;
     }
     //printf("%c %d",tuile1.form, tuile1.color );
-    return tuile1;
-
+    return tuile;
 }
 
 
