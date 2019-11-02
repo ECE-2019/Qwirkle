@@ -1,11 +1,17 @@
 # depslib dependency file v1.0
-1572531148 source:c:\users\zedex\desktop\qwirkle\main.c
+1572715270 source:c:\users\zedex\desktop\qwirkle\main.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
 	<windows.h>
 	<time.h>
 	<string.h>
+	"struct.h"
+	"prototype.h"
 
 1570990851 source:c:\users\zedex\desktop\qwirkle\untitled1.c
+
+1572711134 c:\users\zedex\desktop\qwirkle\struct.h
+
+1572712717 c:\users\zedex\desktop\qwirkle\prototype.h
 

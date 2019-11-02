@@ -1205,3 +1205,498 @@ score tuile 5 Ë
 score tuile 5 ¼
 3
 score tuile 5 É
+Hello 123
+Hello encore
+[OK] Test log()0
+Hello encore
+[OK] Test log()0
+Let's go
+[OK] Test log()0
+Let's go
+[OK] Test log()0
+Let's go
+[OK] Test log()0
+Let's go
+[OK] Test log()0
+Let's go
+draw_tuile()[OK] Test log()0
+Let's go
+draw_tuile()[OK] Test log()0
+Let's go
+draw_tuile()[OK] Test log()0
+Let's go
+draw_tuile()[OK] Test log()0
+Let's go
+draw_tuile()[OK] Test log()0
+Let's go
+[OK] Test log()0
+Let's go
+draw_tuile()[OK] Test log()0
+Let's go
+[OK] Test log()0
+Let's go
+[OK] Test log()0
+Let's go
+[OK] Test log()0
+Let's go
+[OK] Test log()0
+Let's go
+[OK] Test log()0
+Let's go
+[OK] Test log()
+0
+Let's go
+List empty[OK] Test log()
+0
+Let's go
+[OK] Test log()
+0
+Let's go
+[OK] Test log()
+0
+Let's go
+[OK] Test log()
+0
+Let's go
+[OK] Test log()
+0
+Let's go
+draw_tuile()[OK] Test log()
+0
+Let's go
+draw_tuile()[OK] Test log()
+0
+Let's go
+draw_tuile()[OK] Test log()
+0
+Let's go
+draw_tuile()[OK] Test log()
+0
+Let's go
+draw_tuile()[OK] Test log()
+0
+Let's go
+draw_tuile()[OK] Test log()
+0
+Let's go
+draw_tuile()36
+[OK] Test log()
+0
+Let's go
+draw_tuile()[OK] Test log()
+0
+Let's go
+draw_tuile()hello[OK] Test log()
+0
+Let's go
+draw_tuile()hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello[OK] Test log()
+0
+Let's go
+draw_tuile()[OK] Test log()
+0
+Let's go
+draw_tuile()7081512
+7081568
+7081624
+7081680
+7081736
+7081792
+7081848
+7081904
+7081960
+7082016
+7082072
+7082128
+7079112
+7104944
+7104240
+7104688
+7104496
+7104976
+7104816
+7104912
+7104784
+7104144
+7104528
+7104336
+7104848
+7104176
+7104880
+7104272
+7105008
+7104560
+7105040
+7104592
+7104304
+7105072
+0
+[OK] Test log()
+0
+Let's go
+draw_tuile()6753832
+6753888
+6753944
+6754000
+6754056
+6754112
+6754168
+6754224
+6754280
+6754336
+6754392
+6754448
+6751432
+6776656
+6776976
+6777360
+6776496
+6777424
+6777232
+6777072
+6776464
+6777040
+6776848
+6776752
+6776784
+6776688
+6776816
+6776592
+6776528
+6776560
+6777104
+6776720
+6776880
+6777168
+0
+[OK] Test log()
+0
+Let's go
+draw_tuile()Pos doesn't exist in the current list[OK] Test log()
+0
+Let's go
+draw_tuile()[OK] Test log()
+0
+Let's go
+draw_tuile()[OK] Test log()
+0
+Let's go
+draw_tuile()freed[OK] Test log()
+0
+Let's go
+draw_tuile()freed[OK] Test log()
+0
+Let's go
+draw_tuile()freed[OK] Test log()
+0
+Let's go
+draw_tuile()[OK] Test log()
+0
+Let's go
+draw_tuile()tourdraw_tuile()tourdraw_tuile()tourdraw_tuile()tourdraw_tuile()tourdraw_tuile()tourdraw_tuile()tourdraw_tuile()tourdraw_tuile()tourdraw_tuile()tourdraw_tuile()tourdraw_tuile()tour[OK] Test log()
+0
+Let's go
+draw_tuile()Pos doesn't exist in the current listtourdraw_tuile()Pos doesn't exist in the current listtourdraw_tuile()Pos doesn't exist in the current listtourdraw_tuile()Pos doesn't exist in the current listtourdraw_tuile()Pos doesn't exist in the current listtourdraw_tuile()Pos doesn't exist in the current listtourdraw_tuile()Pos doesn't exist in the current listtourdraw_tuile()Pos doesn't exist in the current listtourdraw_tuile()Pos doesn't exist in the current listtourdraw_tuile()Pos doesn't exist in the current listtourdraw_tuile()Pos doesn't exist in the current listtourdraw_tuile()Pos doesn't exist in the current listtour[OK] Test log()
+0
+Let's go
+draw_tuile()tourdraw_tuile()tourdraw_tuile()tourdraw_tuile()tourdraw_tuile()tourdraw_tuile()tourdraw_tuile()tourdraw_tuile()tourdraw_tuile()tourdraw_tuile()tourdraw_tuile()tourdraw_tuile()tour[OK] Test log()
+0
+Let's go
+draw_tuile()
+tourdraw_tuile()
+tourdraw_tuile()
+tourdraw_tuile()
+tourdraw_tuile()
+tourdraw_tuile()
+tourdraw_tuile()
+tourdraw_tuile()
+tourdraw_tuile()
+tourdraw_tuile()
+tourdraw_tuile()
+tourdraw_tuile()
+tour[OK] Test log()
+0
+Let's go
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+[OK] Test log()
+0
+Let's go
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+[OK] Test log()
+0
+Let's go
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+[OK] Test log()
+0
+Let's go
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+[OK] Test log()
+0
+Let's go
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+[OK] Test log()
+0
+Let's go
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+[OK] Test log()
+0
+Let's go
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+[OK] Test log()
+0
+Let's go
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+[OK] Test log()
+0
+Let's go
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+[OK] Test log()
+0
+Let's go
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+[OK] Test log()
+0
+Let's go
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+[OK] Test log()
+0
+Let's go
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+[OK] Test log()
+0
+Let's go
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+[OK] Test log()
+0
+Let's go
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+[OK] Test log()
+0
+Let's go
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+[OK] Test log()
+0
+Let's go
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+[OK] Test log()
+0
+Let's go
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+1
+1
+[OK] Test log()
+0
+[OK] Test log()
+0
+[OK] Test log()
+0
+Let's go
+[OK] Test log()
+0
+Let's go
+[OK] Test log()
+0
+Let's go
+[OK] Test log()
+0
+Let's go
+[OK] Test log()
+0
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
+draw_tuile()
