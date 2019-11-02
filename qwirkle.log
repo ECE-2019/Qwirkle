@@ -653,3 +653,555 @@ pos tuileposx 1 posy 1
 5
 5
 pos tuileposx 2 posy 1
+Hello 123
+Hello encore
+0
+1
+2
+3
+2
+1
+0
+1
+2
+3
+4
+4
+pos tuileposx 14 posy 7
+4
+4
+pos tuileposx 15 posy 7
+4
+5
+5
+4
+3
+2
+1
+2
+3
+4
+3
+2
+3
+4
+4
+pos tuileposx 16 posy 7
+4
+5
+5
+Hello 123
+Hello encore
+0
+1
+1
+pos tuileposx 10 posy 10
+Hello 123
+Hello encore
+0
+1
+2
+2
+pos tuileposx 10 posy 10
+Hello 123
+Hello encore
+0
+1
+1
+Hello 123
+Hello encore
+0
+1
+2
+2
+Hello 123
+Hello encore
+0
+1
+2
+2
+Hello 123
+Hello encore
+0
+1
+1
+pos tuileposx 13 posy 6
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+Hello 123
+Hello encore
+0
+0
+0
+0
+0
+0
+0
+0
+1
+2
+1
+0
+0
+0
+0
+0
+1
+2
+3
+4
+5
+5
+5
+5
+5
+4
+3
+2
+1
+0
+0
+1
+1
+pos tuileposx 10 posy 10
+0
+0
+1
+2
+1
+0
+-1
+-1
+-1
+-1
+0
+Hello 123
+Hello 123
+Hello encore
+0
+1
+1
+pos tuileposx 13 posy 10
+0
+1
+2
+3
+4
+4
+4
+3
+2
+1
+2
+1
+0
+-1
+-1
+0
+1
+2
+3
+4
+4
+3
+2
+1
+0
+-1
+-1
+0
+1
+2
+3
+4
+3
+2
+1
+0
+-1
+-1
+Hello 123
+Hello encore
+0
+1
+2
+3
+4
+5
+5
+5
+4
+3
+2
+2
+pos tuileposx 14 posy 7
+2
+3
+4
+5
+4
+3
+2
+1
+0
+1
+0
+1
+2
+3
+4
+5
+4
+3
+2
+1
+0
+0
+0
+1
+2
+3
+4
+Hello 123
+Hello encore
+0
+1
+1
+pos tuileposx 10 posy 10
+0
+1
+2
+3
+4
+4
+3
+2
+1
+0
+-1
+0
+1
+0
+-1
+0
+1
+2
+3
+4
+3
+2
+1
+0
+-1
+0
+1
+2
+3
+4
+4
+4
+4
+3
+2
+1
+0
+-1
+0
+-1
+-1
+0
+-1
+0
+-1
+0
+1
+2
+3
+4
+Hello 123
+Hello encore
+0
+1
+2
+3
+4
+5
+4
+3
+2
+1
+0
+1
+2
+2
+pos tuileposx 11 posy 10
+0
+1
+2
+3
+3
+3
+2
+1
+0
+-1
+-2
+-1
+0
+1
+2
+3
+3
+2
+1
+0
+-1
+-2
+-1
+-2
+-1
+-2
+Hello 123
+Hello encore
+0
+1
+1
+pos tuile@Hello 123
+Hello encore
+0
+1
+2
+3
+3
+@0
+0
+Hello 123
+Hello encore
+0
+1
+2
+2
+@0
+1
+2
+3
+3
+2
+1
+0
+-1
+-2
+-2
+-2
+-1
+0
+1
+2
+3
+3
+Hello 123
+Hello encore
+0
+1
+1
+@Hello 123
+Hello encore
+0
+0
+score tuile 5 É
+0
+1
+2
+3
+4
+5
+4
+3
+2
+1
+0
+0
+Hello 123
+Hello encore
+0
+1
+1
+score tuile 5 ¼
+0
+Hello 123
+Hello encore
+0
+1
+2
+1
+0
+0
+score tuile 2 ¼
+0
+0
+Hello 123
+Hello encore
+0
+0
+score tuile 5 Ê
+0
+1
+2
+3
+4
+5
+4
+3
+2
+1
+0
+0
+1
+2
+1
+0
+0
+score tuile 6 Ê
+0
+Hello 123
+Hello encore
+0
+1
+0
+1
+1
+score tuile 5 »
+0
+1
+2
+3
+4
+4
+3
+2
+1
+0
+-1
+-1
+0
+1
+2
+3
+Hello 123
+Hello encore
+3
+score tuile 4 »
+Hello 123
+Hello encore
+4
+score tuile 4 ¼
+4
+score tuile 1 »
+1
+score tuile 5 ¼
+0
+score tuile 5 É
+Hello 123
+Hello encore
+1
+score tuile 6 »
+0
+score tuile 5 ¼
+1
+score tuile 2 Ê
+1
+score tuile 1 È
+2
+score tuile 2 É
+Hello 123
+Hello encore
+1
+score tuile 6 Ê
+5
+Hello 123
+Hello 123
+Hello encore
+1
+Hello 123
+Hello encore
+1
+score tuile 6 É
+0
+score tuile 5 Ë
+1
+score tuile 2 Ë
+2
+score tuile 5 »
+Hello 123
+Hello encore
+1
+score tuile 4 Ë
+4
+score tuile 6 Ê
+Hello 123
+Hello encore
+1
+score tuile 6 Ê
+2
+score tuile 1 ¼
+Hello 123
+Hello encore
+0
+score tuile 5 ¼
+3
+score tuile 5 É
+0
+score tuile 4 È
+4
+score tuile 3 Ê
+1
+score tuile 2 Ê
+Hello 123
+Hello encore
+0
+score tuile 2 É
+1
+score tuile 2 Ë
+1
+score tuile 6 É
+1
+score tuile 2 ¼
+0
+score tuile 5 Ë
+Hello 123
+Hello encore
+1
+Hello 123
+Hello encore
+2
+score tuile 5 »
+1
+score tuile 3 É
+0
+score tuile 5 Ë
+1
+score tuile 5 ¼
+3
+score tuile 5 É
