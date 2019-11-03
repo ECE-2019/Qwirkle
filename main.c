@@ -81,6 +81,7 @@ void menu()
       case 4:
       printf("load_game();");
       break;
+
       case 5:
       printf("score();");
       break;
@@ -264,11 +265,17 @@ void display_player_info(game * game, int player_nb)
   int j;
   tuile * tuile;
   int size_l = list_length(game->players[player_nb].hand);
-
+  // log_char("size_l");
+  // log_int(size_l);
   set_coord(37,1);
   printf("%d",player_nb+1);
   set_coord(30,2);
   printf("%s", game->players[player_nb].pseudo);
+  // clean old plyaer info
+  set_coord(30,5);
+  printf("            ");
+  set_coord(30,6);
+  printf("            ");
   for(j = 0; j < size_l; j++){
     tuile = get_link_at(game->players[player_nb].hand,j);
     set_coord(30+j*2,5);
@@ -296,7 +303,7 @@ void play(game * game)
     game->players[i].score_play = 0;
     display_player_info(game, i);
 
-    dialog("How many de tile ?");
+    dialog("How many tile ?");
     set_coord(20,14);
     while(!(tuile_nb == 49 || tuile_nb == 50 || tuile_nb == 51)){
       tuile_nb = getch();
@@ -367,9 +374,15 @@ void play(game * game)
         //color(15,0);
       }
     }
+    // tire x nouvellle tuile de la pioche
+    for(j = 0; j < tuile_nb - 48; j++){
+      push_link(game->players[i].hand, draw_tuile(game));
+    }
+
     // Fin du tour du joueur
     game->players[i].score_game += game->players[i].score_play;
     display_player_info(game, i);
+    Sleep(1000);
   }
 }
 
@@ -382,7 +395,7 @@ int set_tuile(game * game, int player_nb, int tuile_nb){
 
   //game->player[player_nb].hand[position];
 
-  dialog("Placez la tuile:");
+  dialog("Place your tile:");
   //put tuile on field
   set_coord(posx,posy);
   set_color(tuile->color,0);
@@ -430,11 +443,7 @@ int set_tuile(game * game, int player_nb, int tuile_nb){
     // store la tuile dans la temp hand
     //game->players[player_nb].temp_hand[tuile_nb] = *tuile;
     // reset tuile hand
-    remove_link_at(game->players[player_nb].hand, tuile_nb);
-    //
-    // tire une nouvellle tuile de la pioche
-    //tuile = draw_tuile(game);
-
+    game->players[player_nb].hand = remove_link_at(game->players[player_nb].hand, tuile_nb);
   }else{
     // fin de partie
     // end_game()
@@ -465,8 +474,9 @@ void dialog(char * message){
 
 tuile * draw_tuile(game * game){
   log_char("draw_tuile()\n");
-  tuile * tuile = get_link_at(game->pioche, list_length(game->pioche)-1);
-  game->pioche = remove_link_at(game->pioche, list_length(game->pioche)-1);
+  // tuile * tuile = get_link_at(game->pioche, list_length(game->pioche)-1);
+  // game->pioche = remove_link_at(game->pioche, list_length(game->pioche)-1);
+  tuile * tuile = pop_link(game->pioche);
   return tuile;
 }
 

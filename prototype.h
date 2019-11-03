@@ -164,8 +164,7 @@ list * push_link(list * list, tuile * tuile)
     return link;
   }
 
-  struct List * temp;
-  temp = list;
+  struct List * temp = list;
 
   while (temp->next != NULL) {
     temp = temp->next;
@@ -173,6 +172,30 @@ list * push_link(list * list, tuile * tuile)
   temp->next = link;
 
   return list;
+
+}
+tuile * pop_link(list * list)
+{
+  if(is_empty_list(list)){
+    log_char("List empty\n");
+    return NULL;
+  }
+  if(list->next == NULL){
+    free(list);
+    return NULL;
+  }
+
+  struct List * temp = list;
+  struct List * before = list;
+
+  while (temp->next != NULL) {
+    before = temp;
+    temp = temp->next;
+  }
+  before->next = NULL;
+  //free(temp);
+
+  return temp->tuile;
 
 }
 list * add_link_at(list * list, tuile * tuile, int pos)
