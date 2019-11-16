@@ -8,6 +8,7 @@
 #include "struct.h"
 #include "display.h"
 #include "prototype.h"
+#include "tools.h"
 /*
   - Dans select_mode shuffle le deck
   - Bloquer la saisie horizon/vertical
@@ -18,26 +19,26 @@
 */
 void menu();
 void new_game();
+
 bool init_game(game * game);
 bool select_mode(game * gane);
 void input_player_name(game * gane);
 bool select_player_number(game * gane);
-void init_field(game * game);
 
-void update_hud(game * game, int player_nb);
 void play(game * game);
-int set_tuile(game * game, int player_nb, int tuile_nb);
-bool collider(int posx, int posy, tuile * tuile, game * game);
+bool set_tuile(game * game, int player_nb, int tuile_nb);
 void link_tuile(int posx, int posy, tuile * tuile, game * game);
+bool collider(int posx, int posy, tuile * tuile, game * game);
 int scorer(int posx, int posy, game * game);
-void set_score_play(player * player, tuile * tuile);
 bool was_played (char * play, game * game);
+void select_tuile(game * game, int tile_left, int player_nb);
 
+void init_field(game * game);
 void shuffle_list(list * deck);
+tuile * draw_tuile(game * game);
 
 void dialog(char * message);
-
-tuile * draw_tuile(game * game);
+void update_hud(game * game, int player_nb);
 
 int main()
 {
@@ -110,6 +111,85 @@ void new_game()
   }
 }
 
+void ask_save()
+{
+  int key = -1, position = 3;
+
+  display_ask_save();
+  set_coord(7,position);
+  printf(">");
+  set_coord(7,position);
+
+  while(key != 1 && key != 0){
+    if(kbhit()){
+      get_key(&key);
+      set_coord(7,position);
+      printf(" ");
+      if(key == 2 && position < 4){
+        position++;
+      }else if(key == 8 && position > 3){
+        position--;
+      }else if(key == 1){
+        switch(position){
+          case 3:
+          save();
+          break;
+          case 4:
+          display_bye();
+          exit(0);
+          break;
+        }
+      }
+      display_ask_save();
+      set_coord(7,position);
+      printf(">");
+      set_coord(7,position);
+    }
+  }
+}
+
+bool quit()
+{
+  int key = -1, position = 3;
+
+  display_quit();
+  set_coord(7,position);
+  printf(">");
+  set_coord(7,position);
+
+  while(key != 1){
+    if(kbhit()){
+      get_key(&key);
+      set_coord(7,position);
+      printf(" ");
+      if(key == 2 && position < 4){
+        position++;
+      }else if(key == 8 && position > 3){
+        position--;
+      }else if(key == 1){
+        switch(position){
+          case 3:
+          save();
+          case 4:
+          display_bye();
+          exit(0);
+        }
+      }else if(key == 0){
+        return false;
+      }
+      display_quit();
+      set_coord(7,position);
+      printf(">");
+      set_coord(7,position);
+    }
+  }
+  return true;
+}
+
+void save()
+{
+
+}
 bool init_game(game * game)
 {
   game->moves = NULL;
@@ -272,135 +352,159 @@ void update_hud(game * game, int player_nb)
 
 void play(game * game)
 {
-  int i, j, key, tuile_nb, n, position, size_l, exit;
+  int i, j, key, tuile_nb, position, exit;
   tuile * drawed_tuile;
-  tuile * tuile;
 
   exit = 0;
   while (exit != 1) {
-
     for(i = 0; i < game->nb_player; i++){
       // Debut tour joueur
       game->players[i].score_play = 0;
       update_hud(game, i);
 
-      dialog("How many tiles ?");
-      //change tiles
-      set_coord(20,14);
-      tuile_nb = 0;
-      while(!(tuile_nb == 49 || tuile_nb == 50 || tuile_nb == 51 || tuile_nb == 52 || tuile_nb == 53 || tuile_nb == 54 )){
-        tuile_nb = getch();
-      }
+      // play or exchange
+      set_coord(1,14);
+      printf("  Place tile    Change hand");
+      position = 1;
+      set_coord(position,14);
+      printf(">");
+      set_coord(position,14);
 
-      for(j = 0; j < tuile_nb - 48; j++){
-        n = 0;
-        key = -1;
-        position = 30;
-        size_l = list_length(game->players[i].hand);
-        reset_color();
-        update_hud(game, i);
-
-        // Dialog
-        char str[34];
-        sprintf(str, "Choose a tile (%d left)", tuile_nb-48-j);
-        dialog(str);
-
-        // Select first tuile
-        tuile = get_link_at(game->players[i].hand, 0);
-        set_coord(30,5);
-        set_color(0,tuile->color);
-        printf("%c", tuile->form);
-        set_coord(30,5);
-
-        while(key != 1){
-          while(key != 0 && key != 1){
-            if(kbhit()){
-              get_key(&key);
-              //right
-              if(key == 6 && position < 30+(size_l*2-2)){
-                set_coord(position,5);
-
-                tuile = get_link_at(game->players[i].hand, n);
-                set_color(tuile->color,0);
-                printf("%c", tuile->form);
-
-                position = position+2;
-                n++;
-                set_coord(position,5);
-
-                tuile = get_link_at(game->players[i].hand, n);
-                set_color(0,tuile->color);
-                printf("%c", tuile->form);
-                set_coord(position,5);
-                //left
-              }else if(key == 4 && position > 30){
-                set_coord(position,5);
-
-                tuile = get_link_at(game->players[i].hand, n);
-                set_color(tuile->color,0);
-                printf("%c", tuile->form);
-
-                position = position-2;
-                n--;
-                set_coord(position,5);
-                tuile = get_link_at(game->players[i].hand, n);
-                set_color(0,tuile->color);
-                printf("%c", tuile->form);
-                set_coord(position,5);
-              }else if(key == 1){
-                //Place la tuile sur le field
-                reset_color();
-                key = set_tuile(game, i, n);
-              }
-            }
+      while(key != 1){
+        if(kbhit()){
+          get_key(&key);
+          if (key == 4 && position == 15) {
+            set_coord(position,14);
+            printf(" ");
+            position = 1;
+          }else if(key == 6 && position == 1){
+            set_coord(position,14);
+            printf(" ");
+            position = 15;
           }
-          //color(15,0);
-        }
-      }
-      // tire x nouvellle tuile de la deck
-      for(j = 0; j < tuile_nb - 48; j++){
-        drawed_tuile = draw_tuile(game);
-        if (drawed_tuile) {
-          push_link(game->players[i].hand, drawed_tuile);
-        }else{
-          dialog("The deck is empty !");
-          exit = 1; // fin du jeu
-          break;
+          set_coord(position,14);
+          printf(">");
+          set_coord(position,14);
         }
       }
 
-      // Fin du tour du joueur
-      game->players[i].score_game += game->players[i].score_play;
-      // if(list->next == NULL){
-      //   free(list);
-      //   return NULL;
-      // }
-      //
-      // struct List * temp = list;
-      // struct List * before = list;
-      //
-      // while (temp->next != NULL) {
-      //   before = temp;
-      //   temp = temp->next;
-      // }
-      // before->next = NULL;
-      // //free(temp);
-      //
-      // return temp->tuile;
+      if (position == 1) {
+        // PLace tite
+        dialog("How many tiles ?");
+        set_coord(20,14);
+        tuile_nb = 0;
+        while(tuile_nb < 49 || tuile_nb > 54 ){
+          tuile_nb = getch();
+        }
+
+        for(j = 0; j < tuile_nb - 48; j++){
+          update_hud(game, i);
+          select_tuile(game, tuile_nb - 48-j, i);
+        }
+
+        free_moves(game);
+        game->players[i].score_game += game->players[i].score_play;
+
+        for(j = 0; j < tuile_nb - 48; j++){
+          drawed_tuile = draw_tuile(game);
+          if (drawed_tuile) {
+            push_link(game->players[i].hand, drawed_tuile);
+          }else{
+            dialog("The deck is empty !");
+            exit = 1; // fin du jeu
+            break;
+          }
+        }
+      }else if(position == 15){
+        // Change hande
+        // push back hande in deck
+        // pop deck in hand
+      }
       update_hud(game, i);
       Sleep(1000);
     }
   }
 }
 
-int set_tuile(game * game, int player_nb, int tuile_nb)
+void select_tuile(game * game, int tile_left, int player_nb)
 {
-  tuile * tuile = get_link_at(game->players[player_nb].hand, tuile_nb);
-  int posx, posy, new_posx, new_posy, key = -1;
+  int n, key, position, size_l;
+  tuile * selected_tuile;
+  // reset_color();
+  // Dialog
+  char str[34];
+  sprintf(str, "Choose a tile (%d left)", tile_left);
+  dialog(str);
+  // Highlight first tuile
+  selected_tuile = get_link_at(game->players[player_nb].hand, 0);
+  set_coord(30,5);
+  set_color(0,selected_tuile->color);
+  printf("%c", selected_tuile->form);
+  set_coord(30,5);
+
+  n = 0;
+  key = -1;
+  position = 30;
+  size_l = list_length(game->players[player_nb].hand);
+  while(key != 1){
+    if(kbhit()){
+      get_key(&key);
+      //right
+      if(key == 6 && position < 30+(size_l*2-2)){
+        set_coord(position,5);
+
+        selected_tuile = get_link_at(game->players[player_nb].hand, n);
+        set_color(selected_tuile->color,0);
+        printf("%c", selected_tuile->form);
+
+        position = position+2;
+        n++;
+        set_coord(position,5);
+
+        selected_tuile = get_link_at(game->players[player_nb].hand, n);
+        set_color(0,selected_tuile->color);
+        printf("%c", selected_tuile->form);
+        reset_color();
+        set_coord(position,5);
+        //left
+      }else if(key == 4 && position > 30){
+        set_coord(position,5);
+
+        selected_tuile = get_link_at(game->players[player_nb].hand, n);
+        set_color(selected_tuile->color,0);
+        printf("%c", selected_tuile->form);
+
+        position = position-2;
+        n--;
+        set_coord(position,5);
+        selected_tuile = get_link_at(game->players[player_nb].hand, n);
+        set_color(0,selected_tuile->color);
+        printf("%c", selected_tuile->form);
+        reset_color();
+        set_coord(position,5);
+      }else if(key == 1){
+        //Place la tuile sur le field
+        if (!set_tuile(game, player_nb, n)) {
+          /* saisie avorte retourne a la seletion */
+        }
+      }else if(key == 0){
+        if(quit()){
+
+        }
+      }
+    }
+  }
+}
+
+bool set_tuile(game * game, int player_nb, int tuile_nb)
+{
+  tuile * tuile;
+  int posx, posy, new_posx, new_posy, key;
+
+  key  = -1;
   posx = new_posx = 13;
   posy = new_posy = 6;
-
-  //game->player[player_nb].hand[position];
+  tuile = get_link_at(game->players[player_nb].hand, tuile_nb);
 
   dialog("Place your tile:");
   //put tuile on field
@@ -408,43 +512,38 @@ int set_tuile(game * game, int player_nb, int tuile_nb)
   set_color(tuile->color,0);
   printf("%c", tuile->form);
   reset_color();
-  //set_score_play(&game->players[player_nb], tuile);
   set_coord(posx,posy);
 
-  while(key != 0 && key != 1){
+  while(key != 1){
     if(kbhit()){
       dialog("Place your tile:");
       get_key(&key);
-      //right
       if(key == 6 && posx < 26){
         new_posx = posx+1;
-        //left
       }else if(key == 4 && posx > 1){
         new_posx = posx-1;
-        //up
       }else if(key == 8 && posy > 1){
         new_posy = posy-1;
-        //down
       }else if(key == 2 && posy < 12){
         new_posy = posy+1;
-      }else if(key == 1){
-        // pose la tuile su le field
+      }else if(key == 1){// pose la tuile su le field
         if (collider(posx-1,posy-1,tuile, game)) {
+          // link la ou les tuiles proches
           link_tuile(posx-1,posy-1,tuile, game);
           if (tuile->next_color || tuile->prev_color || tuile->next_color || tuile->prev_form) {
+            // si la tuile a bien ete linke
             log_char("tuiles linked\n");
           }
           tuile->posx = posx;
           tuile->posy = posy;
+          // Pose la tuile sur le terrain
           game->field[posx-1][posy-1] = *tuile;
-          game->players[player_nb].score_play += scorer(posx-1,posy-1, game);
+          // Remove tile from hand
           game->players[player_nb].hand = remove_link_at(game->players[player_nb].hand, tuile_nb);
+          // Calcul the score
+          game->players[player_nb].score_play += scorer(posx-1,posy-1, game);
         }else if(key == 0){
-          display_field(game);
-          log_char("end game\n");
-          exit(0);
-        }else{
-          key = -1;
+          return false;
         }
       }
       // si la position a change
@@ -457,11 +556,10 @@ int set_tuile(game * game, int player_nb, int tuile_nb)
         posx = new_posx;
         posy = new_posy;
       }
-      //set_score_play(&game->players[player_nb], tuile);
       set_coord(posx,posy);
     }
   }
-  return key;
+  return true;
 }
 
 bool collider(int posx, int posy, tuile * tuile, game * game)
@@ -469,7 +567,7 @@ bool collider(int posx, int posy, tuile * tuile, game * game)
   struct Tuile side_tuile;
   int i;
   bool col_color,col_form, lig_color,lig_form;
-  char str[34];
+
   if (posx < 26 && posx > 0 && posy > 0 && posy < 12){ // If in the field
     if (game->field[posx][posy].score == 0) {// If free space
       col_color = col_form = lig_color = lig_form = false;
@@ -516,9 +614,6 @@ bool collider(int posx, int posy, tuile * tuile, game * game)
         i++;
       }
       i = 1;
-      // char str3[34];
-      // sprintf(str3, "Tuiles de gauche %d %d %d\n", game->field[posx-1][posy].score, game->field[posx-2][posy].score, game->field[posx-3][posy].score);
-      // log_char(str3);
       while (game->field[posx-i][posy].score > 0) {// if tuile
         side_tuile = game->field[posx-i][posy];
         if (side_tuile.color == tuile->color && !lig_form) {// if same color and not same form before
@@ -571,63 +666,6 @@ bool collider(int posx, int posy, tuile * tuile, game * game)
   return false;
 }
 
-void link_tuile(int posx, int posy, tuile * tuile, game * game)
-{
-  if (posy-1 > 0 && game->field[posx][posy-1].score > 0) {
-    log_char("link tuile up -> ");
-    if (game->field[posx][posy-1].color == tuile->color) {
-      log_char("same color -> ");
-      game->field[posx][posy-1].next_color = tuile;
-      tuile->prev_color = &game->field[posx][posy-1];
-    }
-    if (game->field[posx][posy-1].form == tuile->form ) {
-      log_char("same form -> ");
-      game->field[posx][posy-1].next_form = tuile;
-      tuile->prev_form = &game->field[posx][posy-1];
-    }
-  }
-  if (posy+1 < 12 && game->field[posx][posy+1].score > 0) {
-    log_char("link tuile down -> ");
-    if (game->field[posx][posy+1].color == tuile->color) {
-      log_char("same color -> ");
-      game->field[posx][posy+1].prev_color = tuile;
-      tuile->next_color = &game->field[posx][posy+1];
-    }
-    if (game->field[posx][posy+1].form == tuile->form ) {
-      log_char("same form -> ");
-      game->field[posx][posy+1].prev_form = tuile;
-      tuile->next_form = &game->field[posx][posy+1];
-
-    }
-  }
-  if (posx-1 > 0 && game->field[posx-1][posy].score > 0) {
-    log_char("link tuile left -> ");
-    if (game->field[posx-1][posy].color == tuile->color) {
-      log_char("same color -> ");
-      game->field[posx-1][posy].next_color = tuile;
-      tuile->prev_color = &game->field[posx-1][posy];
-    }
-    if (game->field[posx-1][posy].form == tuile->form ) {
-      log_char("same form -> ");
-      game->field[posx-1][posy].next_form = tuile;
-      tuile->prev_form = &game->field[posx-1][posy];
-    }
-  }
-  if (posx < 26 && game->field[posx][posy+1].score > 0) {
-    log_char("link tuile right -> ");
-    if (game->field[posx+1][posy].color == tuile->color) {
-      log_char("same color -> ");
-      game->field[posx+1][posy].prev_color = tuile;
-      tuile->next_color = &game->field[posx+1][posy];
-    }
-    if (game->field[posx+1][posy].form == tuile->form ) {
-      log_char("same form -> ");
-      game->field[posx+1][posy].prev_form = tuile;
-      tuile->next_form = &game->field[posx+1][posy];
-
-    }
-  }
-}
 
 int scorer(int posx, int posy, game * game)
 {
@@ -715,14 +753,16 @@ int scorer(int posx, int posy, game * game)
 bool was_played (char * cur_move, game * game)
 {
   char move_reverse[4];
+  move * new_move;
+
+  // reverse relation
   move_reverse[0] = cur_move[2];
   move_reverse[1] = cur_move[3];
   move_reverse[2] = cur_move[0];
   move_reverse[3] = cur_move[1];
 
-  // create a new play
-  move * new_move = malloc(sizeof(*new_move));
-
+  // create a new move
+  new_move = malloc(sizeof(*new_move));
   new_move->move[0] = cur_move[0];
   new_move->move[1] = cur_move[1];
   new_move->move[2] = cur_move[2];
@@ -763,30 +803,6 @@ bool was_played (char * cur_move, game * game)
   return false;
 }
 
-int groupe_prev_color_length(tuile * tuile)
-{
-  int size_t = 0;
-  while (tuile) {
-    size_t++;
-    tuile = tuile->prev_color;
-  }
-  return size_t;
-}
-
-int get_score_play(tuile * tuile)
-{
-  int score_play = 0;
-  score_play = tuile->score;
-  return score_play;
-}
-
-void set_score_play(player * player, tuile * tuile)
-{
-  player->score_play += get_score_play(tuile);
-  set_coord(30,12);
-  printf("%d   ",player->score_play);
-}
-
 void dialog(char * message)
 {
   set_coord(1,14);
@@ -798,8 +814,65 @@ tuile * draw_tuile(game * game)
   tuile * tuile = pop_link(game->deck);
   return tuile;
 }
+void link_tuile(int posx, int posy, tuile * tuile, game * game)
+{
+  if (posy-1 > 0 && game->field[posx][posy-1].score > 0) {
+    log_char("link tuile up -> ");
+    if (game->field[posx][posy-1].color == tuile->color) {
+      log_char("same color -> ");
+      game->field[posx][posy-1].next_color = tuile;
+      tuile->prev_color = &game->field[posx][posy-1];
+    }
+    if (game->field[posx][posy-1].form == tuile->form ) {
+      log_char("same form -> ");
+      game->field[posx][posy-1].next_form = tuile;
+      tuile->prev_form = &game->field[posx][posy-1];
+    }
+  }
+  if (posy+1 < 12 && game->field[posx][posy+1].score > 0) {
+    log_char("link tuile down -> ");
+    if (game->field[posx][posy+1].color == tuile->color) {
+      log_char("same color -> ");
+      game->field[posx][posy+1].prev_color = tuile;
+      tuile->next_color = &game->field[posx][posy+1];
+    }
+    if (game->field[posx][posy+1].form == tuile->form ) {
+      log_char("same form -> ");
+      game->field[posx][posy+1].prev_form = tuile;
+      tuile->next_form = &game->field[posx][posy+1];
 
-void shuffle_list(list * deck){
+    }
+  }
+  if (posx-1 > 0 && game->field[posx-1][posy].score > 0) {
+    log_char("link tuile left -> ");
+    if (game->field[posx-1][posy].color == tuile->color) {
+      log_char("same color -> ");
+      game->field[posx-1][posy].next_color = tuile;
+      tuile->prev_color = &game->field[posx-1][posy];
+    }
+    if (game->field[posx-1][posy].form == tuile->form ) {
+      log_char("same form -> ");
+      game->field[posx-1][posy].next_form = tuile;
+      tuile->prev_form = &game->field[posx-1][posy];
+    }
+  }
+  if (posx < 26 && game->field[posx][posy+1].score > 0) {
+    log_char("link tuile right -> ");
+    if (game->field[posx+1][posy].color == tuile->color) {
+      log_char("same color -> ");
+      game->field[posx+1][posy].prev_color = tuile;
+      tuile->next_color = &game->field[posx+1][posy];
+    }
+    if (game->field[posx+1][posy].form == tuile->form ) {
+      log_char("same form -> ");
+      game->field[posx+1][posy].prev_form = tuile;
+      tuile->next_form = &game->field[posx+1][posy];
+
+    }
+  }
+}
+void shuffle_list(list * deck)
+{
   // print_list(game->deck);
   // shuffle it
   // struct tuile buf;

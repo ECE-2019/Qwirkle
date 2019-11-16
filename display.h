@@ -3,44 +3,45 @@
 
 #include "prototype.h"
 
+/* Prototype */
 void display_menu();
 void display_select_mode();
 void display_select_player_number();
 void display_hud();
 void display_field(game * game);
+void display_options();
+void display_quit();
+void display_score();
+void display_ask_save();
 void display_bye();
 void display_welcome();
-void display_options();
-void display_score();
 
+/* Function */
 void display_menu()
 {
   system("cls");
   puts("\n***********************MENU***********************\n");
-  puts("\t Demarrer une nouvelle partie");
-  puts("\t Reprendre la partie en cours");
-  puts("\t Consulter les scores");
-  puts("\t Consulter les options");
-  puts("\t Quitter le jeu");
+  puts("\t New game");
+  puts("\t Saved games");
+  puts("\t Leaderboard");
+  puts("\t Options");
+  puts("\t Quit");
 }
-
 void display_select_mode()
 {
   system("cls");
-  puts("\n*********************Choisissez un mode*********************\n");
-  puts("\t Degrade");
+  puts("\n*********************Select a mode*********************\n");
+  puts("\t Quick");
   puts("\t Normal");
 }
-
 void display_select_player_number()
 {
   system("cls");
-  puts("\n************Choisissez un nombre de joueur (2-4)************\n");
+  puts("\n************Number of player (2-4)************\n");
   puts("\t 2");
   puts("\t 3");
   puts("\t 4");
 }
-
 void display_hud()
 {
   system("cls");
@@ -54,7 +55,6 @@ void display_hud()
   set_coord(30,11);
   puts("Score game");
 }
-
 void display_field(game * game)
 {
   int i,j;
@@ -67,7 +67,6 @@ void display_field(game * game)
   }
   reset_color();
 }
-
 void display_options()
 {
   system("cls");
@@ -75,6 +74,37 @@ void display_options()
   while (!getch()) {
     /* code */
   }
+}
+void display_quit()
+{
+  system("cls");
+  puts("\n************Your about to leave. Would you like to save ?************\n");
+  puts("\t yes");
+  puts("\t no");
+}
+void display_ask_save()
+{
+  system("cls");
+  puts("\n************Your about to leave. Would you like to save ?************\n");
+  puts("\t yes");
+  puts("\t no");
+}
+void display_bye()
+{
+  system("cls");
+  set_color(12,1);
+  puts("\n\n");
+  puts("________      ___    ___ _______           ________      ___    ___ _______      ");
+  puts("|\\   __  \\    |\\  \\  /  /|\\  ___ \\         |\\   __  \\    |\\  \\  /  /|\\  ___ \\     ");
+  puts("\\ \\  \\|\\ /_   \\ \\  \\/  / \\ \\   __/|        \\ \\  \\|\\ /_   \\ \\  \\/  / \\ \\   __/|    ");
+  puts("\\ \\   __  \\   \\ \\    / / \\ \\  \\_|/__       \\ \\   __  \\   \\ \\    / / \\ \\  \\_|/__  ");
+  puts(" \\ \\  \\|\\  \\   \\/  /  /   \\ \\  \\_|\\ \\       \\ \\  \\|\\  \\   \\/  /  /   \\ \\  \\_|\\ \\ ");
+  puts("  \\ \\_______\\__/  / /      \\ \\_______\\       \\ \\_______\\__/  / /      \\ \\_______\\");
+  puts("   \\|_______|\\___/ /        \\|_______|        \\|_______|\\___/ /        \\|_______|");
+  puts("            \\|___|/                                    \\|___|/      ");
+  Sleep(3000);
+  reset_color();
+  system("cls");
 }
 void display_welcome()
 {
@@ -92,24 +122,6 @@ void display_welcome()
   puts("\t\tBy EvergreenVen & Minaro from the Qwirkle Team ©");
   //Sleep(2000);
   reset_color();
-}
-
-void display_bye()
-{
-  system("cls");
-  set_color(12,1);
-  puts("\n\n");
-  puts("________      ___    ___ _______           ________      ___    ___ _______      ");
-  puts("|\\   __  \\    |\\  \\  /  /|\\  ___ \\         |\\   __  \\    |\\  \\  /  /|\\  ___ \\     ");
-  puts("\\ \\  \\|\\ /_   \\ \\  \\/  / \\ \\   __/|        \\ \\  \\|\\ /_   \\ \\  \\/  / \\ \\   __/|    ");
-  puts("\\ \\   __  \\   \\ \\    / / \\ \\  \\_|/__       \\ \\   __  \\   \\ \\    / / \\ \\  \\_|/__  ");
-  puts(" \\ \\  \\|\\  \\   \\/  /  /   \\ \\  \\_|\\ \\       \\ \\  \\|\\  \\   \\/  /  /   \\ \\  \\_|\\ \\ ");
-  puts("  \\ \\_______\\__/  / /      \\ \\_______\\       \\ \\_______\\__/  / /      \\ \\_______\\");
-  puts("   \\|_______|\\___/ /        \\|_______|        \\|_______|\\___/ /        \\|_______|");
-  puts("            \\|___|/                                    \\|___|/      ");
-  Sleep(3000);
-  reset_color();
-  system("cls");
 }
 
 #endif // DISPLAY_H_INCLUDED

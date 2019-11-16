@@ -1,12 +1,9 @@
 #ifndef PROTOTYPE_H_INCLUDED
 #define PROTOTYPE_H_INCLUDED
 
-/* Prototype */
-void set_coord(int x, int y);
-void set_color(int color_text,int color_background);
-void reset_color();
-void get_key(int * key);
+#include "tools.h"
 
+/* Prototype */
 bool is_empty_list(list * list);
 int list_length(list * list);
 void update_link_at(list * list, tuile * tuile, int pos);
@@ -20,86 +17,10 @@ tuile * pop_link(list * list);
 
 void print_list(list * list);
 void print_tuile(tuile * tuile);
-
-void log_char(char * message);
-void log_int(int message);
+void print_move(move * move);
+void print_move_list(move * move);
 
 /* Function */
-void set_coord(int x, int y)
-{
-  COORD mycoord;
-  mycoord.X = x;
-  mycoord.Y = y;
-  SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), mycoord );
-}
-void set_color(int color_text,int color_background)
-{
-  HANDLE H=GetStdHandle(STD_OUTPUT_HANDLE);
-  SetConsoleTextAttribute(H,color_background*16+color_text);
-  /**
-  0: noir
-  1: bleu fonc�
-  2: vert
-  3: bleu-gris
-  4: marron
-  5: pourpre
-  6: kaki
-  7: gris clair
-  8: gris
-  9: bleu
-  10: vert fluo
-  11: turquoise
-  12: rouge
-  13: rose fluo
-  14: jaune fluo
-  15: blanc
-  **/
-}
-void reset_color()
-{
-  HANDLE H=GetStdHandle(STD_OUTPUT_HANDLE);
-  SetConsoleTextAttribute(H,0*16+15);
-}
-void get_key(int * key)
-{
-  int input = getch();
-  //printf("%d",input);
-  switch(input){
-    case 72:
-    case 122:
-    case 56:
-    //printf("up");
-    *key = 8;
-    break;
-    case 75:
-    case 113:
-    case 52:
-    //printf("left");
-    *key = 4;
-    break;
-    case 77:
-    case 100:
-    case 54:
-    //printf("right");
-    *key = 6;
-    break;
-    case 80:
-    case 115:
-    case 50:
-    //printf("down");
-    *key = 2;
-    break;
-    case 13:
-    //printf("enter");
-    *key = 1;
-    break;
-    case 27:
-    //printf("esc");
-    *key = 0;
-    break;
-  }
-}
-
 bool is_empty_list(list * list)
 {
   if (list) {
@@ -270,6 +191,27 @@ tuile * new_struct(int color, int form, int score)
   tuile->prev_color = NULL;
   return tuile;
 }
+void free_moves()
+{
+  // Free moves
+
+  // if(list->next == NULL){
+  //   free(list);
+  //   return NULL;
+  // }
+  //
+  // struct List * temp = list;
+  // struct List * before = list;
+  //
+  // while (temp->next != NULL) {
+  //   before = temp;
+  //   temp = temp->next;
+  // }
+  // before->next = NULL;
+  // //free(temp);
+  //
+  // return temp->tuile;
+}
 
 void print_list(list * list)
 {
@@ -296,54 +238,17 @@ void print_tuile(tuile * tuile)
 void print_move(move * move)
 {
   char structure[25];
-  int ascii = 96;
+  //int ascii = 96;
   sprintf(structure,"Move\n{\n\t%c%c%c%c\n}\n",
   move->move[0],move->move[1],move->move[2],move->move[3]);
   log_char(structure);
 }
-
-void print_move_list(move * move){
+void print_move_list(move * move)
+{
   while (move) {
     print_move(move);
     move = move->next;
   }
 }
-
-void log_char(char * message)
-{
-  FILE *f;
-  f = fopen("qwirkle.log", "a"); // a+ (create + append) option will allow appending which is useful in a log file
-  if (f == NULL) { /* Something is wrong   */}
-  fprintf(f, message);
-  fclose(f);
-  return;
-}
-void log_int(int number)
-{
-  FILE *f;
-  f = fopen("qwirkle.log", "a"); // a+ (create + append) option will allow appending which is useful in a log file
-  if (f == NULL) { /* Something is wrong   */}
-  char str[10];
-  sprintf(str, "%d\n", number);
-  fprintf(f, str);
-  fclose(f);
-}
-
-bool chcmp(char * chain1, char * chain2)
-{
-  int chain1_length, chain2_length, i;
-  chain1_length = sizeof(chain1)/sizeof(chain1[0]);
-  chain2_length = sizeof(chain2)/sizeof(chain2[0]);
-  if (chain1_length != chain2_length) {
-    return false;
-  }
-  for (i = 0; i < chain1_length; i++) {
-    if (chain1[i] != chain2[i]) {
-      return false;
-    }
-  }
-  return true;
-}
-
 
 #endif // PROTOTYPE_H_INCLUDED
