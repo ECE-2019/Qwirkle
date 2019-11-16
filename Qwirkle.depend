@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1572795984 source:c:\users\zedex\desktop\qwirkle\main.c
+1573866470 source:c:\users\zedex\desktop\qwirkle\main.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
@@ -7,11 +7,19 @@
 	<time.h>
 	<string.h>
 	"struct.h"
+	"display.h"
 	"prototype.h"
 
 1570990851 source:c:\users\zedex\desktop\qwirkle\untitled1.c
 
-1572711134 c:\users\zedex\desktop\qwirkle\struct.h
+1573848690 c:\users\zedex\desktop\qwirkle\struct.h
 
-1572712717 c:\users\zedex\desktop\qwirkle\prototype.h
+1573852586 c:\users\zedex\desktop\qwirkle\prototype.h
+
+1573864819 c:\users\zedex\desktop\qwirkle\display.h
+	"prototype.h"
+
+1573856118 source:c:\users\zedex\desktop\qwirkle\prototype.c
+
+1573857234 source:c:\users\zedex\desktop\qwirkle\display.c
 

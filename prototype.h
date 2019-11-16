@@ -9,7 +9,6 @@ void get_key(int * key);
 
 bool is_empty_list(list * list);
 int list_length(list * list);
-void print_list(list * list);
 void update_link_at(list * list, tuile * tuile, int pos);
 list * new_link(tuile * tuile);
 list * push_link(list * list, tuile * tuile);
@@ -17,6 +16,10 @@ list * add_link_at(list * list, tuile * tuile, int pos);
 list * remove_link_at(list * list, int pos);
 tuile * get_link_at(list * list, int pos);
 tuile * new_struct(int color, int form, int score);
+tuile * pop_link(list * list);
+
+void print_list(list * list);
+void print_tuile(tuile * tuile);
 
 void log_char(char * message);
 void log_int(int message);
@@ -113,22 +116,6 @@ int list_length(list * list)
     }
   return size_l;
 }
-void print_list(list * list)
-{
-  //system("cls");
-  if (is_empty_list(list)) {
-    log_char("List empty");
-    return;
-  }
-  //char * str;
-  while (list) {
-    printf("[%d %c %d]\n", list->tuile->color, list->tuile->form, list->tuile->score);
-    //sprintf(str, "[%d %c %d]\n", list->tuile->color, list->tuile->form, list->tuile->score);
-    list = list->next;
-  }
-  //log_char(str);
-  return;
-}
 void update_link_at(list * list, tuile * tuile, int pos)
 {
   int i = 0;
@@ -163,7 +150,6 @@ list * push_link(list * list, tuile * tuile)
   if(is_empty_list(list)){
     return link;
   }
-
   struct List * temp = list;
 
   while (temp->next != NULL) {
@@ -276,7 +262,51 @@ tuile * new_struct(int color, int form, int score)
   tuile->color = color;
   tuile->form = form;
   tuile->score = score;
+  tuile->posx = -1;
+  tuile->posy = -1;
+  tuile->next_color = NULL;
+  tuile->prev_color = NULL;
+  tuile->next_form = NULL;
+  tuile->prev_color = NULL;
   return tuile;
+}
+
+void print_list(list * list)
+{
+  if (is_empty_list(list)) {
+    log_char("List empty");
+    return;
+  }
+  while (list) {
+    //char * str;
+    //sprintf(str, "[%d %c %d]\n", list->tuile->color, list->tuile->form, list->tuile->score);
+    //log_char(str);
+    print_tuile(list->tuile);
+    list = list->next;
+  }
+  return;
+}
+void print_tuile(tuile * tuile)
+{
+  char structure[70];
+  sprintf(structure,"Tuile\n{\n\t%d\n\t%d\n\t%d\n\t%d\n\t%d\n\t%p\n\t%p\n\t%p\n\t%p\n}\n",
+  tuile->color,tuile->form,tuile->score,tuile->posx,tuile->posy,tuile->next_color,tuile->prev_color,tuile->next_form,tuile->prev_form);
+  log_char(structure);
+}
+void print_move(move * move)
+{
+  char structure[25];
+  int ascii = 96;
+  sprintf(structure,"Move\n{\n\t%c%c%c%c\n}\n",
+  move->move[0],move->move[1],move->move[2],move->move[3]);
+  log_char(structure);
+}
+
+void print_move_list(move * move){
+  while (move) {
+    print_move(move);
+    move = move->next;
+  }
 }
 
 void log_char(char * message)
@@ -298,4 +328,22 @@ void log_int(int number)
   fprintf(f, str);
   fclose(f);
 }
+
+bool chcmp(char * chain1, char * chain2)
+{
+  int chain1_length, chain2_length, i;
+  chain1_length = sizeof(chain1)/sizeof(chain1[0]);
+  chain2_length = sizeof(chain2)/sizeof(chain2[0]);
+  if (chain1_length != chain2_length) {
+    return false;
+  }
+  for (i = 0; i < chain1_length; i++) {
+    if (chain1[i] != chain2[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+
 #endif // PROTOTYPE_H_INCLUDED

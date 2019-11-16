@@ -6,6 +6,12 @@ typedef struct Tuile
   int color;
   int form;
   int score;
+  int posx;
+  int posy;
+  struct Tuile * next_color;
+  struct Tuile * prev_color;
+  struct Tuile * next_form;
+  struct Tuile * prev_form;
 } tuile;
 
 typedef struct List
@@ -25,13 +31,20 @@ typedef struct Player
   list * hand;
 } player;
 
+typedef struct Move
+{
+  char move[4];
+  struct Move * next;
+} move;
+
 typedef struct Game
 {
-  player * players;
-  list * pioche;
-  tuile field[26][12];
   int mode;
   int nb_player;
+  list * deck;
+  player * players;
+  move * moves;
+  tuile field[26][12];
 } game;
 
 typedef enum
