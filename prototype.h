@@ -12,7 +12,7 @@ list * push_link(list * list, tuile * tuile);
 list * add_link_at(list * list, tuile * tuile, int pos);
 list * remove_link_at(list * list, int pos);
 tuile * get_link_at(list * list, int pos);
-tuile * new_struct(int color, int form, int score);
+tuile * new_struct(int color, int form);
 tuile * pop_link(list * list);
 
 void print_list(list * list);
@@ -89,7 +89,7 @@ tuile * pop_link(list * list)
   }
   if(list->next == NULL){
     free(list);
-    return NULL;
+    return list->tuile;
   }
 
   struct List * temp = list;
@@ -177,12 +177,12 @@ tuile * get_link_at(list * list, int pos)
   }
   return list->tuile;
 }
-tuile * new_struct(int color, int form, int score)
+tuile * new_struct(int color, int form)
 {
   tuile * tuile = malloc(sizeof(*tuile));
   tuile->color = color;
   tuile->form = form;
-  tuile->score = score;
+  tuile->score = 1;
   tuile->posx = -1;
   tuile->posy = -1;
   tuile->next_color = NULL;

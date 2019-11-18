@@ -5,18 +5,17 @@
 #include <time.h>
 #include <string.h>
 
+
 #include "struct.h"
 #include "display.h"
-#include "prototype.h"
-#include "tools.h"
-/*
-  - Dans select_mode shuffle le deck
-  - Bloquer la saisie horizon/vertical
-  - Bloquer la saisie au milieu de null part
-  - changer ses tuiles
-  - terminer ou passer
-  - free les mooves
+/* TO DO
+- Bloquer la saisie horizon/vertical
+- Qwrikle !
+- save game
+- save score
 */
+int first_play;
+
 void menu();
 void new_game();
 
@@ -31,14 +30,18 @@ void link_tuile(int posx, int posy, tuile * tuile, game * game);
 bool collider(int posx, int posy, tuile * tuile, game * game);
 int scorer(int posx, int posy, game * game);
 bool was_played (char * play, game * game);
-void select_tuile(game * game, int tile_left, int player_nb);
+bool select_tuile(game * game, int tile_left, int player_nb);
 
 void init_field(game * game);
-void shuffle_list(list * deck);
+void shuffle_list(tuile * deck[36]);
 tuile * draw_tuile(game * game);
 
 void dialog(char * message);
 void update_hud(game * game, int player_nb);
+
+void save();
+void parse_game(game * game);
+void parse_score(game * game);
 
 int main()
 {
@@ -48,7 +51,7 @@ int main()
   log_char("[OK] Test log_int() : ");
   log_int(0);
   display_welcome();
-  //system("start prince_loop.wav");
+  //system("start src/prince_loop.wav");
   menu();
 
   return 0;
@@ -166,22 +169,19 @@ bool quit()
         position++;
       }else if(key == 8 && position > 3){
         position--;
-      }else if(key == 1){
-        switch(position){
-          case 3:
-          save();
-          case 4:
-          display_bye();
-          exit(0);
-        }
-      }else if(key == 0){
-        return false;
       }
       display_quit();
       set_coord(7,position);
       printf(">");
       set_coord(7,position);
     }
+  }
+  switch(position){
+    case 3:
+      return false;
+    case 4:
+      display_bye();
+      exit(0);
   }
   return true;
 }
@@ -190,10 +190,12 @@ void save()
 {
 
 }
+
 bool init_game(game * game)
 {
   game->moves = NULL;
   game->deck = NULL;
+  game->play = 0;
   if(select_mode(game)){
     if (select_player_number(game)) {
       input_player_name(game);
@@ -224,18 +226,24 @@ bool select_mode(game * game)
         position--;
       }else if(key == 1){
         game->mode = position-2;// 1-2
-        tuile * tuile = NULL;
-        int i, j;
+        int i, j, x;
         int colors[] =  {1,12,2,14,11,8};
-        int scores[] =  {1,2,3,4,5,6};
         int forms[] =  {187, 188, 200, 201, 202, 203, 204, 185, 185, 205, 206};
+        tuile * deck[36];
+
+        x = 0;
         for(i = 0; i < 6; i++){
           for(j = 0; j < 6; j++){
-            tuile = new_struct(colors[i], forms[j], scores[i]);
-            game->deck = push_link(game->deck, tuile);
+            deck[x] = new_struct(colors[i], forms[j]);
+            x++;
           }
         }
-        shuffle_list(game->deck);
+        shuffle_list(deck);
+
+        for (i = 0; i < 36; i++) {
+          game->deck = push_link(game->deck, deck[i]);
+        }
+        log_char("Size list : ");log_int(list_length(game->deck));
       }else if(key == 0){
         return false;
       }
@@ -352,7 +360,7 @@ void update_hud(game * game, int player_nb)
 
 void play(game * game)
 {
-  int i, j, key, tuile_nb, position, exit;
+  int i, j, k, key, tuile_nb, position, exit;
   tuile * drawed_tuile;
 
   exit = 0;
@@ -361,11 +369,11 @@ void play(game * game)
       // Debut tour joueur
       game->players[i].score_play = 0;
       update_hud(game, i);
-
+      //parse_game(game);
       // play or exchange
       set_coord(1,14);
       printf("  Place tile    Change hand");
-      position = 1;
+      position = 1;// 1-15
       set_coord(position,14);
       printf(">");
       set_coord(position,14);
@@ -399,13 +407,15 @@ void play(game * game)
 
         for(j = 0; j < tuile_nb - 48; j++){
           update_hud(game, i);
-          select_tuile(game, tuile_nb - 48-j, i);
+          if (!select_tuile(game, tuile_nb - 48-j, i)) {
+            break;
+          }
         }
 
         free_moves(game);
         game->players[i].score_game += game->players[i].score_play;
 
-        for(j = 0; j < tuile_nb - 48; j++){
+        for(k = 0; k < j; k++){
           drawed_tuile = draw_tuile(game);
           if (drawed_tuile) {
             push_link(game->players[i].hand, drawed_tuile);
@@ -415,18 +425,26 @@ void play(game * game)
             break;
           }
         }
+        parse_game(game);
       }else if(position == 15){
-        // Change hande
-        // push back hande in deck
-        // pop deck in hand
+        log_int(list_length(game->deck));
+        for(j = 0; j < 6; j++){
+          add_link_at(game->deck, pop_link(game->players[i].hand),1);
+        }
+        log_int(list_length(game->deck));
+        game->players[i].hand = NULL;
+        for(j = 0; j < 6; j++){
+          game->players[i].hand = push_link(game->players[i].hand, draw_tuile(game));
+        }
       }
+      game->moves = NULL;
       update_hud(game, i);
       Sleep(1000);
     }
   }
 }
 
-void select_tuile(game * game, int tile_left, int player_nb)
+bool select_tuile(game * game, int tile_left, int player_nb)
 {
   int n, key, position, size_l;
   tuile * selected_tuile;
@@ -440,6 +458,7 @@ void select_tuile(game * game, int tile_left, int player_nb)
   set_coord(30,5);
   set_color(0,selected_tuile->color);
   printf("%c", selected_tuile->form);
+  reset_color();
   set_coord(30,5);
 
   n = 0;
@@ -485,15 +504,67 @@ void select_tuile(game * game, int tile_left, int player_nb)
       }else if(key == 1){
         //Place la tuile sur le field
         if (!set_tuile(game, player_nb, n)) {
-          /* saisie avorte retourne a la seletion */
+          display_field(game);
+          key = -1;
         }
       }else if(key == 0){
-        if(quit()){
+        // Resume Skip Quit
+        set_coord(1,14);
+        printf("  Resume    Skip    Quit");
+        //printf("   Skip    Skip    Quit");
+        int saved_position = position;
+        position = 1;//1-11-19
+        set_coord(position,14);
+        printf(">");
+        set_coord(position,14);
+        while(key != 1){
+          if(kbhit()){
+            get_key(&key);
+            if (key == 4 ) {
+              if (position == 19) {
+                set_coord(position,14);
+                printf(" ");
+                position = 11;
+              }else if(position == 11){
+                set_coord(position,14);
+                printf(" ");
+                position = 1;
+              }
+            }else if(key == 6){
+              if (position == 1) {
+                set_coord(position,14);
+                printf(" ");
+                position = 11;
+              }else if(position == 11){
+                set_coord(position,14);
+                printf(" ");
+                position = 19;
+              }
+            }
+            set_coord(position,14);
+            printf(">");
+            set_coord(position,14);
+          }
+        }
 
+        if (position == 1) {
+          key = 0;
+          position = saved_position;
+          dialog(str);
+        }else if (position == 11) {
+          return false;
+        }else if (position == 19) {
+          if(quit()){
+            key = 0;
+            position = saved_position;
+            dialog(str);
+          }
         }
       }
+      // resume skip quit
     }
   }
+  return true;
 }
 
 bool set_tuile(game * game, int player_nb, int tuile_nb)
@@ -514,7 +585,7 @@ bool set_tuile(game * game, int player_nb, int tuile_nb)
   reset_color();
   set_coord(posx,posy);
 
-  while(key != 1){
+  while(key != 0){
     if(kbhit()){
       dialog("Place your tile:");
       get_key(&key);
@@ -542,8 +613,7 @@ bool set_tuile(game * game, int player_nb, int tuile_nb)
           game->players[player_nb].hand = remove_link_at(game->players[player_nb].hand, tuile_nb);
           // Calcul the score
           game->players[player_nb].score_play += scorer(posx-1,posy-1, game);
-        }else if(key == 0){
-          return false;
+          return true;
         }
       }
       // si la position a change
@@ -559,7 +629,7 @@ bool set_tuile(game * game, int player_nb, int tuile_nb)
       set_coord(posx,posy);
     }
   }
-  return true;
+  return false;
 }
 
 bool collider(int posx, int posy, tuile * tuile, game * game)
@@ -656,9 +726,11 @@ bool collider(int posx, int posy, tuile * tuile, game * game)
         i++;
       }
       // test si les 4 sont vides + bordures du terain
-      // if (game->field[posx+1][posy].score+game->field[posx-1][posy].score+game->field[posx][posy+1].score+game->field[posx][posy-1].score == 0) {
-      //   return false
-      // }
+      if (game->field[posx+1][posy].score+game->field[posx-1][posy].score+game->field[posx][posy+1].score+game->field[posx][posy-1].score == 0 && game->play > 0) {
+        dialog("Can't play in the middle of nowhere");
+        return false;
+      }
+      game->play++;
       return true;
     }
   }
@@ -666,11 +738,10 @@ bool collider(int posx, int posy, tuile * tuile, game * game)
   return false;
 }
 
-
 int scorer(int posx, int posy, game * game)
 {
   int score;
-  score = 0; //+1 pour la piece posee
+  score = 1; //+1 pour la piece posee
   int size_color_next = 0;
   int size_color_prev = 0;
   int size_form_next = 0;
@@ -678,7 +749,7 @@ int scorer(int posx, int posy, game * game)
   int prev_posx, prev_posy;
   tuile * cur_tuile;
   tuile * save_tuile;
-  char play[4];
+  char plays[4];
 
   save_tuile = &game->field[posx][posy];
   cur_tuile = &game->field[posx][posy];
@@ -692,9 +763,9 @@ int scorer(int posx, int posy, game * game)
     cur_tuile = cur_tuile->next_color;
     if (cur_tuile) {
       log_char("Link next_color found !\n");
-      sprintf(play, "%c%c%c%c\n", ascii+prev_posx,ascii+prev_posy,ascii+cur_tuile->posx,ascii+cur_tuile->posy);
-      log_char(play);
-      if (!was_played(play, game)) {
+      sprintf(plays, "%c%c%c%c\n", ascii+prev_posx,ascii+prev_posy,ascii+cur_tuile->posx,ascii+cur_tuile->posy);
+      log_char(plays);
+      if (!was_played(plays, game)) {
         log_char("Wasn't played !\n");
         size_color_next++;
       }
@@ -707,9 +778,9 @@ int scorer(int posx, int posy, game * game)
     cur_tuile = cur_tuile->prev_color;
     if (cur_tuile) {
       log_char("Link prev_color found !\n");
-      sprintf(play, "%c%c%c%c\n", ascii+prev_posx,ascii+prev_posy,ascii+cur_tuile->posx,ascii+cur_tuile->posy);
-      log_char(play);
-      if (!was_played(play, game)) {
+      sprintf(plays, "%c%c%c%c\n", ascii+prev_posx,ascii+prev_posy,ascii+cur_tuile->posx,ascii+cur_tuile->posy);
+      log_char(plays);
+      if (!was_played(plays, game)) {
         log_char("Wasn't played !\n");
         size_color_prev++;
       }
@@ -722,9 +793,9 @@ int scorer(int posx, int posy, game * game)
     cur_tuile = cur_tuile->next_form;
     if (cur_tuile) {
       log_char("Link next_form found !\n");
-      sprintf(play, "%c%c%c%c\n", ascii+prev_posx,ascii+prev_posy,ascii+cur_tuile->posx,ascii+cur_tuile->posy);
-      log_char(play);
-      if (!was_played(play, game)) {
+      sprintf(plays, "%c%c%c%c\n", ascii+prev_posx,ascii+prev_posy,ascii+cur_tuile->posx,ascii+cur_tuile->posy);
+      log_char(plays);
+      if (!was_played(plays, game)) {
         log_char("Wasn't played !\n");
         size_form_next++;
       }
@@ -737,13 +808,22 @@ int scorer(int posx, int posy, game * game)
     cur_tuile = cur_tuile->prev_form;
     if (cur_tuile) {
       log_char("Link prev_form found !\n");
-      sprintf(play, "%c%c%c%c\n", ascii+prev_posx,ascii+prev_posy,ascii+cur_tuile->posx,ascii+cur_tuile->posy);
-      log_char(play);
-      if (!was_played(play, game)) {
+      sprintf(plays, "%c%c%c%c\n", ascii+prev_posx,ascii+prev_posy,ascii+cur_tuile->posx,ascii+cur_tuile->posy);
+      log_char(plays);
+      if (!was_played(plays, game)) {
         log_char("Wasn't played !\n");
         size_form_prev++;
       }
     }
+  }
+  if (size_color_next > 0) {
+    size_color_next--;
+  }if (size_color_prev > 0) {
+    size_color_next--;
+  }if (size_form_next > 0) {
+    size_color_next--;
+  }if (size_form_prev > 0) {
+    size_color_next--;
   }
   score += size_color_next + size_color_prev + size_form_next + size_form_prev;
   log_char("Score : ");log_int(score);
@@ -811,9 +891,16 @@ void dialog(char * message)
 
 tuile * draw_tuile(game * game)
 {
+  int before, after;
+  before = list_length(game->deck);
   tuile * tuile = pop_link(game->deck);
+  after = list_length(game->deck);
+  if (before == after) {
+    game->deck = NULL;
+  }
   return tuile;
 }
+
 void link_tuile(int posx, int posy, tuile * tuile, game * game)
 {
   if (posy-1 > 0 && game->field[posx][posy-1].score > 0) {
@@ -871,20 +958,168 @@ void link_tuile(int posx, int posy, tuile * tuile, game * game)
     }
   }
 }
-void shuffle_list(list * deck)
+
+void shuffle_list(tuile * deck[36])
 {
-  // print_list(game->deck);
   // shuffle it
-  // struct tuile buf;
-  // int k, random1, random2, n =35;
-  // for(k = 0; k < n; k++){
-  //   random1 = rand()%n;
-  //   random2 = rand()%n;
-  //   //printf("%d-%c -> %d-%c\n",random1,game->deck[random1].form, random2,game->deck[random2].form);
-  //   buf = game->deck[random1];
-  //   game->deck[random1] = game->deck[random2];
-  //   game->deck[random2] = buf;
-  //   //printf("%d-%c -> %d-%c\n",random1,game->deck[random1].form, random2,game->deck[random2].form, random2);
+  tuile * buf;
+  int k, random1, random2, n = 35;
+  for(k = 0; k < n; k++){
+    random1 = rand()%n;
+    random2 = rand()%n;
+    //printf("%d-%c -> %d-%c\n",random1,game->deck[random1].form, random2,game->deck[random2].form);
+    buf = deck[random1];
+    deck[random1] = deck[random2];
+    deck[random2] = buf;
+    //printf("%d-%c -> %d-%c\n",random1,game->deck[random1].form, random2,game->deck[random2].form, random2);
+  }
+}
+
+void parse_score(game * game)
+{
+  // FILE * json;
+  // json = fopen("score.json","w");
+  // if (json == NULL) {
+  //   log_char("File not created okay, errno = %d\n");
+  //   //log_char("File not created okay, errno = %d\n", errno);
+  //   return;
   // }
-  // reset field
+  // score scores[10];
+  //
+  // //get  end
+  //
+  // // sort
+  // char comma[] = ",\n";
+  // char start_json[] = "{\n\t\"scores\":[\n";
+  // char end_json[] = "\n\t]\n}";
+  //
+  // fwrite(start_json, 1, sizeof(start_json)-1,json);
+  // for (int i = 0; i < scores_length; i++) {
+  //   sprintf(str1, "\t\t{\"pseudo\":\"%s\",\"score_game\":\"%d\"}",
+  //     game->players[i].pseudo,
+  //     game->players[i].score_game,
+  //   );
+  //   if (i < scores_length) {
+  //     fwrite(comma, 1, sizeof(comma)-1,json);
+  //   }
+  // }
+  // fwrite(end_json, 1, sizeof(end_json)-1,json);
+
+}
+
+void parse_game(game * game)
+{
+  FILE * json;
+  json = fopen("save.json","w");
+  if (json == NULL) {
+    log_char("File not created okay, errno = %d\n");
+    //log_char("File not created okay, errno = %d\n", errno);
+    return;
+  }
+
+  // Game model
+  char start_players[] = "\n\"players\":[\n";
+  char start_deck[] = "\"deck\":[\n";
+  char start_field[] = "\"field\":[\n";
+  char start_hand[] = "\n\t\"hand\":[\n";
+
+  char comma[] = ",\n";
+  char end_array[] = "\t\n],\n";
+  char end_array2[] = "\n\t]";
+  char end_json[] = "\n}";
+
+  // start json
+  char str0[30];
+  sprintf(str0, "{\n\"mode\":\"%d\",\"nb_players\":\"%d\",",
+  game->mode,
+  game->nb_player
+);
+fwrite(str0, 1, sizeof(str0), json);
+
+// players
+fwrite(start_players, 1, sizeof(start_players)-1, json);
+char str1[63];
+for (int i = 0; i < game->nb_player; i++) {
+  sprintf(str1, "\t{\"pseudo\":\"%s\",\"score_game\":\"%d\",\"score_play\":\"%d\",",
+  game->players[i].pseudo,
+  game->players[i].score_game,
+  game->players[i].score_play
+);
+fwrite(str1, 1, strlen(str1), json);
+
+fwrite(start_hand, 1, sizeof(start_hand)-1, json);
+list * hand = game->players[i].hand;
+char str2[51];
+while(hand){
+  sprintf(str2, "\t\t\t{\"form\":\"%d\",\"color\":\"%d\",\"posx\":\"%d\",\"posy\":\"%d\"}",
+  hand->tuile->form,
+  hand->tuile->color,
+  hand->tuile->posx,
+  hand->tuile->posy
+);
+fwrite(str2, 1, strlen(str2),json);
+if (hand->next) {
+  fwrite(comma, 1, sizeof(comma)-1,json);
+}
+hand = hand->next;
+}
+fwrite(end_array2, 1, sizeof(end_array2)-1, json);
+fwrite(end_json, 1, sizeof(end_json)-1, json);
+if (i < game->nb_player) {
+  fwrite(comma, 1, sizeof(comma)-1,json);
+}
+}
+fwrite(end_array, 1, sizeof(end_array)-1, json);
+// end players
+
+
+// deck
+fwrite(start_deck, 1, sizeof(start_deck)-1, json);
+list * deck = game->deck;
+log_int(list_length(deck));
+char str2[51];
+while(deck){
+  sprintf(str2, "\t{\"form\":\"%d\",\"color\":\"%d\",\"posx\":\"%d\",\"posy\":\"%d\"}",
+  deck->tuile->form,
+  deck->tuile->color,
+  deck->tuile->posx,
+  deck->tuile->posy
+);
+fwrite(str2, 1, strlen(str2),json);
+if (deck->next) {
+  fwrite(comma, 1, sizeof(comma)-1,json);
+}
+deck = deck->next;
+}
+fwrite(end_array, 1, sizeof(end_array)-1, json);
+// end deck
+
+// field
+fwrite(start_field, 1, sizeof(start_field)-1, json);
+char str3[51];
+for (int i = 0; i < 26; i++) {
+  for (int j = 0; j < 12; j++) {
+    if (game->field[i][j].score != 0) {
+      sprintf(str3, "{\"form\":\"%d\",\"color\":\"%d\",\"posx\":\"%d\",\"posy\":\"%d\"}",
+      game->field[i][j].form,
+      game->field[i][j].color,
+      game->field[i][j].posx,
+      game->field[i][j].posy
+    );
+    fwrite(str3, 1, strlen(str3), json);
+    if (i != 26 && j != 12) {
+      fwrite(comma, 1, sizeof(comma)-1,json);
+    }
+  }
+}
+}
+fwrite(end_array2, 1, sizeof(end_array2), json);
+// end field
+
+// end json
+fwrite(end_json, 1, sizeof(end_json), json);
+
+fclose (json);
+//log_char(str);
+log_char("File created okay\nSize : ");
 }

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tuile_180',['tuile',['../struct_8h.html#a04a9449bad2d822f3cf844208bc0c63f',1,'struct.h']]]
+  ['score_196',['score',['../struct_8h.html#ae07d95e3f2d8ca36b6d3000926eab284',1,'struct.h']]]
 ];

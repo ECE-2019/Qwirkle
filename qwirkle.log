@@ -5583,3 +5583,3814 @@ nfmf
  <-> nfmf f 
 Already linked
 Score : 1
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+File not created okay, errno = 1990672658
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+File not created okay, errno = 1990672658
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+File not created okay, errno = 1990672658
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+File created okay
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+File created okay
+Size : 50
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+File created okay
+Size : 50
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+File created okay
+Size : 50
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+File created okay
+Size : 50
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+File created okay
+Size : 50
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+200
+200
+File created okay
+Size : 50
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 50
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 50
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 50
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 50
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 50
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 50
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 50
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 50
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 50
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 50
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 300
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 300
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 300
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 300
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 300
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 300
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 1024
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 1024
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 1024
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 4096
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 4096
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 4096
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+`
+			],
+		},	],
+	],
+File created okay
+Size : 4096
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+			],
+		},	],
+File created okay
+Size : 4096
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+"deck":[
+	],
+File created okay
+Size : 4096
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+"deck":[
+	],
+File created okay
+Size : 4096
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 4096
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 4096
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 4096
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 4096
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 4096
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 4096
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+300
+300
+File created okay
+Size : 4096
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+File created okay
+Size : 4096
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Tuile
+{
+	1
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	B80003BB
+}
+Tuile
+{
+	1
+	188
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	B20003B1
+}
+Tuile
+{
+	1
+	200
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	1
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	1
+	202
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	1
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	12
+	187
+	2
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	12
+	188
+	2
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	12
+	200
+	2
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	12
+	201
+	2
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	12
+	202
+	2
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	12
+	203
+	2
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	2
+	187
+	3
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	2
+	188
+	3
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	2
+	200
+	3
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00210000
+}
+Tuile
+{
+	2
+	201
+	3
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	2
+	202
+	3
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	2
+	203
+	3
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	14
+	187
+	4
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	14
+	188
+	4
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	14
+	200
+	4
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	14
+	201
+	4
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	14
+	202
+	4
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	14
+	203
+	4
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+File created okay
+Size : 4096
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+File created okay
+Size : 4096
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+[12386496 ( 1546793837]
+[12386496 ( 0]
+[12386496 ( 0]
+[12386496 ( 0]
+[12386496 ( 0]
+[12386496 ( 0]
+[12386496 ( 0]
+[12386496 ( 0]
+[12386496 ( 0]
+[12386496 ( 0]
+[12386496 ( 0]
+[12386496 ( 0]
+[12386496 ( 0]
+[12386496 ( 0]
+[12412280 ( 0]
+[0 [0 [0 [0 [0 [0 [0 [0 [0 File created okay
+Size : 4096
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+[1 » 1]
+[1 ¼ 1]
+[1 È 1]
+[1 É 1]
+[1 Ê 1]
+[1 Ë 1]
+[12 » 2]
+[12 ¼ 2]
+[12 È 2]
+[12 É 2]
+[12 Ê 2]
+[12 Ë 2]
+[2 » 3]
+[2 ¼ 3]
+[2 È 3]
+[2 É 3]
+[2 Ê 3]
+[2 Ë 3]
+[14 » 4]
+[14 ¼ 4]
+[14 È 4]
+[14 É 4]
+[14 Ê 4]
+[14 Ë 4]
+File created okay
+Size : 4096
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+[1 » 1]
+[1 ¼ 1]
+[1 È 1]
+[1 É 1]
+[1 Ê 1]
+[1 Ë 1]
+[12 » 2]
+[12 ¼ 2]
+[12 È 2]
+[12 É 2]
+[12 Ê 2]
+[12 Ë 2]
+[2 » 3]
+[2 ¼ 3]
+[2 È 3]
+[2 É 3]
+[2 Ê 3]
+[2 Ë 3]
+[14 » 4]
+[14 ¼ 4]
+[14 È 4]
+[14 É 4]
+[14 Ê 4]
+[14 Ë 4]
+File created okay
+Size : 4096
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+[1 » 1]
+[1 ¼ 1]
+[1 È 1]
+[1 É 1]
+[1 Ê 1]
+[1 Ë 1]
+[12 » 2]
+[12 ¼ 2]
+[12 È 2]
+[12 É 2]
+[12 Ê 2]
+[12 Ë 2]
+[2 » 3]
+[2 ¼ 3]
+[2 È 3]
+[2 É 3]
+[2 Ê 3]
+[2 Ë 3]
+[14 » 4]
+[14 ¼ 4]
+[14 È 4]
+[14 É 4]
+[14 Ê 4]
+[14 Ë 4]
+File created okay
+Size : 4096
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+[1 » 1]
+[1 ¼ 1]
+[1 È 1]
+[1 É 1]
+[1 Ê 1]
+[1 Ë 1]
+[12 » 2]
+[12 ¼ 2]
+[12 È 2]
+[12 É 2]
+[12 Ê 2]
+[12 Ë 2]
+[2 » 3]
+[2 ¼ 3]
+[2 È 3]
+[2 É 3]
+[2 Ê 3]
+[2 Ë 3]
+[14 » 4]
+[14 ¼ 4]
+[14 È 4]
+[14 É 4]
+[14 Ê 4]
+[14 Ë 4]
+File created okay
+Size : 4096
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : 4096
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : Score : 0
+link tuile left -> same color -> tuiles linked
+Link prev_color found !
+nfmf
+First link
+Move
+{
+	nfmf
+}
+Wasn't played !
+Score : 1
+link tuile left -> same color -> tuiles linked
+Link prev_color found !
+ofnf
+Add link
+Wasn't played !
+Link prev_color found !
+nfmf
+nfmf
+ <-> nfmf  
+Already linked
+Score : 1
+21
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : Score : 0
+link tuile left -> same color -> tuiles linked
+Link prev_color found !
+nfmf
+First link
+Move
+{
+	nfmf
+}
+Wasn't played !
+Score : 1
+link tuile left -> same color -> tuiles linked
+Link prev_color found !
+ofnf
+Add link
+Wasn't played !
+Link prev_color found !
+nfmf
+nfmf
+ <-> nfmf g 
+Already linked
+Score : 1
+21
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : Score : 0
+Score : 0
+21
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : Score : 0
+21
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : Score : 0
+Score : 0
+Score : 0
+21
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : Score : 0
+Score : 0
+Score : 0
+21
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : Score : 0
+Score : 0
+Score : 0
+21
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : Score : 0
+Score : 0
+Score : 0
+21
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : Score : 0
+Score : 0
+Score : 0
+21
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : Score : 0
+Score : 0
+Score : 0
+20
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : Score : 0
+Score : 0
+Score : 0
+21
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : Score : 0
+Score : 0
+Score : 0
+21
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+hello[OK] Test log_char() : a
+[OK] Test log_int() : 0
+hello[OK] Test log_char() : a
+[OK] Test log_int() : 0
+hellohellohellohello[OK] Test log_char() : a
+[OK] Test log_int() : 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+helloTuile
+{
+	12
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+hello[OK] Test log_char() : a
+[OK] Test log_int() : 0
+helloTuile
+{
+	11
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	8
+	202
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	14
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	1
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	2
+	202
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	14
+	202
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	1
+	202
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	12
+	188
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	12
+	200
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	11
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	14
+	188
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	12
+	202
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	1
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	B80003BB
+}
+helloTuile
+{
+	12
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	2
+	200
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	12
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	2
+	188
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	11
+	202
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	1
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	8
+	200
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	14
+	200
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	8
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	1
+	188
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	B60003B5
+}
+helloTuile
+{
+	8
+	188
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	12
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	11
+	200
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	1
+	200
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	2
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00210000
+}
+helloTuile
+{
+	14
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	11
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	8
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	14
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	11
+	188
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	2
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+helloTuile
+{
+	2
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+24
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+36
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+24
+File created okay
+Size : Score : 0
+21
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+24
+File created okay
+Size : Score : 0
+21
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Score : 0
+Score : 0
+link tuile left -> same color -> tuiles linked
+Link prev_color found !
+pfof
+First link
+Move
+{
+	pfof
+}
+Wasn't played !
+Score : 1
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Score : 0
+inpt cancelled[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Score : 0
+link tuile left -> same color -> tuiles linked
+Link prev_color found !
+nfmf
+First link
+Move
+{
+	nfmf
+}
+Wasn't played !
+Score : 1
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Score : 0
+link tuile left -> same form -> tuiles linked
+Link prev_form found !
+ofnf
+First link
+Move
+{
+	ofnf
+}
+Wasn't played !
+Score : 1
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Score : 0
+Score : 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Score : 0
+Score : 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Score : 0
+link tuile left -> same color -> tuiles linked
+Link prev_color found !
+nfmf
+First link
+Move
+{
+	nfmf
+}
+Wasn't played !
+Score : 1
+Pos doesn't exist in the current list[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Score : 0
+link tuile left -> same form -> tuiles linked
+Link prev_form found !
+nhmh
+First link
+Move
+{
+	nhmh
+}
+Wasn't played !
+Score : 1
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+de retour dans la boucleScore : 0
+de retour dans la bouclelink tuile left -> same color -> tuiles linked
+Link prev_color found !
+nfmf
+First link
+Move
+{
+	nfmf
+}
+Wasn't played !
+Score : 1
+de retour dans la boucle[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+de retour dans la boucleScore : 0
+de retour dans la bouclelink tuile left -> same color -> tuiles linked
+Link prev_color found !
+nfmf
+First link
+Move
+{
+	nfmf
+}
+Wasn't played !
+Score : 1
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclePos doesn't exist in the current list[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+de retour dans la boucleScore : 0
+de retour dans la bouclelink tuile left -> same color -> tuiles linked
+Link prev_color found !
+nfmf
+First link
+Move
+{
+	nfmf
+}
+Wasn't played !
+Score : 1
+de retour dans la boucle[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+de retour dans la boucleScore : 0
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile left -> same color -> tuiles linked
+Link prev_color found !
+nfmf
+First link
+Move
+{
+	nfmf
+}
+Wasn't played !
+Score : 1
+de retour dans la bouclede retour dans la boucle[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+de retour dans la boucleScore : 0
+de retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile left -> same color -> tuiles linked
+Link prev_color found !
+nfmf
+First link
+Move
+{
+	nfmf
+}
+Wasn't played !
+Score : 1
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile up -> same form -> tuiles linked
+Link prev_form found !
+ngnf
+Add link
+Wasn't played !
+Score : 1
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile left -> same color -> tuiles linked
+Link prev_color found !
+ogng
+Add link
+Wasn't played !
+Score : 1
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+de retour dans la boucleScore : 0
+de retour dans la bouclede retour dans la bouclede retour dans la boucle[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+de retour dans la bouclede retour dans la boucle[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+de retour dans la boucle[OK] Test log_char() : a
+[OK] Test log_int() : 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+removedremovedremovedremovedremovedremoved[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+removedremovedremovedremovedremovedremoved[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+removedremovedremovedremovedremovedremovedTuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+removedremovedremovedremovedremovedremovedTuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+removedremovedremovedremovedremovedremovedTuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+removedremovedremovedremovedremovedremovedTuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Tuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	2
+	202
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	8
+	188
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	14
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	8
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	8
+	202
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedremovedremovedremovedremovedremoved[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Tuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	11
+	202
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	8
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	2
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00210000
+}
+Tuile
+{
+	8
+	188
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	8
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedremovedremovedremovedremovedcest videremoved[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Tuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	14
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	1
+	202
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	12
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	11
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	14
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	6777936
+	6755624
+	0
+	6763656
+	6779656
+	00000000
+	4DF8C6BA
+	0C00875D
+	00676C50
+}
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Tuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	12
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	12
+	200
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	14
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	14
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	11
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	11824208
+	11801896
+	0
+	11809976
+	11825864
+	00000000
+	6073B587
+	0C00B2F8
+	00B46C50
+}
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Tuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	1
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	11
+	200
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	14
+	202
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	8
+	188
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	8
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	11758672
+	11736360
+	0
+	11757472
+	11760840
+	00000000
+	6677DDC8
+	0C004D94
+	00B36C50
+}
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Tuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	224336
+	202024
+	0
+	209384
+	227144
+	00000000
+	1FD46BE2
+	0C00A925
+	00036C50
+}
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Tuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	2
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00210000
+}
+Tuile
+{
+	8
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	12
+	202
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	12
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	2
+	200
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	11103312
+	11081000
+	0
+	11088360
+	11105192
+	00000000
+	AA7DD542
+	0C00F50A
+	00A96C50
+}
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Tuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	1
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	14
+	202
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	1
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	12
+	200
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	12
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	224336
+	202024
+	0
+	209384
+	226888
+	00000000
+	73B64967
+	0C00EC82
+	00036C50
+}
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Tuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	8
+	202
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	1
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	14
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	2
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00210000
+}
+Tuile
+{
+	8
+	188
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedList > 0
+Tuile
+{
+	6777936
+	6755624
+	0
+	6762984
+	6780104
+	00000000
+	49FEB8DC
+	0C00C496
+	00676C50
+}
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Tuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	11
+	202
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	8
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	8
+	202
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	12
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	8
+	200
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+List > 0
+Tuile
+{
+	9333840
+	9311528
+	0
+	9318984
+	9337032
+	00000000
+	E554CC8D
+	0C00EA98
+	008E6C50
+}
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Tuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	1
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	11
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	12
+	200
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	8
+	188
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	1
+	202
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+List > 0
+Tuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	12741712
+	12719400
+	0
+	12740512
+	12744712
+	00000000
+	8F7D03C4
+	0C000546
+	00C26C50
+}
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Tuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	11
+	188
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	8
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	14
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	14
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	2
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+List > 0
+removedTuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+List > 0
+removedTuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+List > 0
+removedTuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+List > 0
+removedTuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+List > 0
+removedTuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+List > 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Tuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	1
+	202
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	8
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	2
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	2
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	14
+	188
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedremovedremovedremovedremovedremoved[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Tuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	11
+	200
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	14
+	188
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	11
+	202
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	8
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	8
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	8
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	8
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	11
+	202
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	14
+	188
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	11
+	200
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	0
+	0
+	4
+	12150256
+	0
+	00B9008C
+	62FF2316
+	8C001438
+	00B97000
+}
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Tuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	2
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	1
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	B80003BB
+}
+Tuile
+{
+	8
+	188
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	2
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	1
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	1
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	2
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	8
+	188
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	1
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	B80003BB
+}
+removedTuile
+{
+	2
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Tuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	2
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	8
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	2
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	8
+	188
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+Tuile
+{
+	11
+	188
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	11
+	188
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	8
+	188
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	2
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	8
+	201
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	2
+	187
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+removedTuile
+{
+	8
+	203
+	1
+	-1
+	-1
+	00000000
+	00000000
+	00000000
+	00000000
+}
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+24
+30
+de retour dans la bouclede retour dans la boucleScore : 0
+de retour dans la boucleScore : 0
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile left -> same form -> tuiles linked
+Link prev_form found !
+ofnf
+First link
+Move
+{
+	ofnf
+}
+Wasn't played !
+Score : 1
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile down -> same color -> link tuile right -> tuiles linked
+Link next_color found !
+nenf
+Add link
+Wasn't played !
+Score : 1
+de retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile down -> same color -> link tuile right -> tuiles linked
+Link next_color found !
+ndne
+Add link
+Wasn't played !
+Link next_color found !
+nenf
+nenf
+ <-> nenf yn 
+Already linked
+Score : 1
+de retour dans la boucleScore : 0
+de retour dans la bouclelink tuile left -> same form -> tuiles linked
+Link prev_form found !
+odnd
+Add link
+Wasn't played !
+Score : 1
+de retour dans la bouclelink tuile down -> same color -> link tuile right -> tuiles linked
+Link next_color found !
+mcmd
+Add link
+Wasn't played !
+Score : 1
+de retour dans la bouclede retour dans la bouclelink tuile down -> same color -> link tuile right -> tuiles linked
+Link next_color found !
+ocod
+Add link
+Wasn't played !
+Link prev_form found !
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+de retour dans la boucleScore : 0
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile left -> same color -> tuiles linked
+Link prev_color found !
+nfmf
+First link
+Move
+{
+	nfmf
+}
+Wasn't played !
+Score : 1
+de retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile left -> same color -> tuiles linked
+Link prev_color found !
+ofnf
+Add link
+Wasn't played !
+Link prev_color found !
+nfmf
+nfmf
+ <-> nfmf á 
+Already linked
+Score : 1
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile down -> same form -> link tuile right -> Link next_form found !
+nenf
+Add link
+Wasn't played !
+Score : 1
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile down -> same form -> link tuile right -> same color -> tuiles linked
+Link next_color found !
+mene
+Add link
+Wasn't played !
+Link next_form found !
+memf
+Add link
+Wasn't played !
+Score : 2
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la boucleScore : 0
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile down -> same form -> link tuile right -> Link next_form found !
+ndne
+Add link
+Wasn't played !
+Link next_form found !
+nenf
+nenf
+ <-> nenfÀyá 
+Already linked
+Score : 1
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la boucleScore : 0
+de retour dans la bouclede retour dans la bouclelink tuile down -> same form -> link tuile right -> Link next_form found !
+kdke
+Add link
+Wasn't played !
+Score : 1
+de retour dans la bouclelink tuile down -> same form -> link tuile right -> Link next_form found !
+kckd
+Add link
+Wasn't played !
+Link next_form found !
+kdke
+kdke
+ <-> kdkezá 
+Already linked
+Score : 1
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la boucleScore : 0
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la boucle[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+de retour dans la boucleScore : 0
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile left -> same color -> tuiles linked
+Link prev_color found !
+nfmf
+First link
+Move
+{
+	nfmf
+}
+Wasn't played !
+Score : 1
+de retour dans la bouclelink tuile down -> same form -> link tuile right -> Link next_form found !
+nenf
+Add link
+Wasn't played !
+Score : 1
+de retour dans la bouclelink tuile up -> same form -> tuiles linked
+Link prev_form found !
+mgmf
+Add link
+Wasn't played !
+Score : 1
+de retour dans la bouclede retour dans la bouclelink tuile up -> same form -> tuiles linked
+Link prev_form found !
+mhmg
+Add link
+Wasn't played !
+Link prev_form found !
+mgmf
+mgmf
+ <-> mgmf°yp 
+Already linked
+Score : 1
+de retour dans la boucle[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+de retour dans la boucleScore : 0
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile left -> same color -> tuiles linked
+Link prev_color found !
+nfmf
+First link
+Move
+{
+	nfmf
+}
+Wasn't played !
+Score : 1
+de retour dans la bouclede retour dans la bouclelink tuile left -> same color -> tuiles linked
+Link prev_color found !
+ofnf
+First link
+Move
+{
+	ofnf
+}
+Wasn't played !
+Link prev_color found !
+nfmf
+Add link
+Wasn't played !
+Score : 2
+de retour dans la bouclelink tuile left -> same color -> tuiles linked
+Link prev_color found !
+pfof
+Add link
+Wasn't played !
+Link prev_color found !
+ofnf
+ofnf
+ <-> ofnf yl 
+Already linked
+Link prev_color found !
+nfmf
+nfmf
+ <-> nfmf°yl 
+Already linked
+Score : 1
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+de retour dans la boucleScore : 1
+de retour dans la bouclelink tuile left -> same form -> tuiles linked
+Link prev_form found !
+nfmf
+First link
+Move
+{
+	nfmf
+}
+Wasn't played !
+Score : 2
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile down -> same color -> link tuile right -> tuiles linked
+Link next_color found !
+nenf
+First link
+Move
+{
+	nenf
+}
+Wasn't played !
+Link prev_form found !
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la boucleScore : 1
+de retour dans la bouclede retour dans la bouclelink tuile left -> same color -> tuiles linked
+Link prev_color found !
+nfmf
+First link
+Move
+{
+	nfmf
+}
+Wasn't played !
+Score : 2
+de retour dans la bouclede retour dans la bouclelink tuile up -> same form -> tuiles linked
+Link prev_form found !
+mgmf
+First link
+Move
+{
+	mgmf
+}
+Wasn't played !
+Score : 2
+de retour dans la bouclelink tuile up -> same form -> link tuile left -> same color -> tuiles linked
+Link prev_color found !
+ngmg
+Add link
+Wasn't played !
+Link prev_form found !
+ngnf
+Add link
+Wasn't played !
+Score : 3
+de retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile left -> same color -> tuiles linked
+Link prev_color found !
+ogng
+Add link
+Wasn't played !
+Link prev_color found !
+ngmg
+ngmg
+ <-> ngmg°yv 
+Already linked
+Score : 2
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+de retour dans la boucleScore : 1
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile left -> same color -> tuiles linked
+Link prev_color found !
+nfmf
+First link
+Move
+{
+	nfmf
+}
+Wasn't played !
+Score : 2
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile left -> same color -> tuiles linked
+Link prev_color found !
+ofnf
+Add link
+Wasn't played !
+Link prev_color found !
+nfmf
+nfmf
+ <-> nfmf À 
+Already linked
+Score : 2
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la boucle[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+de retour dans la boucleScore : 1
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile left -> same color -> tuiles linked
+Link prev_color found !
+nfmf
+First link
+Move
+{
+	nfmf
+}
+Wasn't played !
+Score : 1
+de retour dans la bouclede retour dans la bouclelink tuile down -> same form -> link tuile right -> Link next_form found !
+memf
+First link
+Move
+{
+	memf
+}
+Wasn't played !
+Score : 1
+de retour dans la boucletuiles linked
+Link prev_form found !
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+de retour dans la boucleScore : 1
+de retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile left -> same form -> tuiles linked
+Link prev_form found !
+nfmf
+First link
+Move
+{
+	nfmf
+}
+Wasn't played !
+Score : 1
+de retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile left -> same form -> tuiles linked
+Link prev_form found !
+ofnf
+Add link
+Wasn't played !
+Link prev_form found !
+nfmf
+nfmf
+ <-> nfmf ¬ 
+Already linked
+Score : 1
+de retour dans la bouclelink tuile left -> same form -> tuiles linked
+Link prev_form found !
+pfof
+First link
+Move
+{
+	pfof
+}
+Wasn't played !
+Link prev_form found !
+ofnf
+Add link
+Wasn't played !
+Link prev_form found !
+nfmf
+Add link
+Wasn't played !
+Score : 3
+de retour dans la bouclede retour dans la boucle[OK] Test log_char() : a
+[OK] Test log_int() : 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la boucleScore : 1
+de retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile left -> same color -> tuiles linked
+Link prev_color found !
+nfmf
+First link
+Move
+{
+	nfmf
+}
+Wasn't played !
+Score : 1
+de retour dans la boucle22
+File created okay
+Size : de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile down -> same form -> link tuile right -> Link next_form found !
+nenf
+First link
+Move
+{
+	nenf
+}
+Wasn't played !
+Score : 1
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile left -> same color -> tuiles linked
+Link prev_color found !
+oene
+Add link
+Wasn't played !
+Score : 1
+de retour dans la bouclede retour dans la bouclede retour dans la bouclede retour dans la bouclelink tuile left -> same color -> tuiles linked
+Link prev_color found !
+peoe
+Add link
+Wasn't played !
+Link prev_color found !
+oene
+oene
+ <-> oene°y 
+Already linked
+Link prev_form found !
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36

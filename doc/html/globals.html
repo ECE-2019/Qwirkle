@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Globals</title>
+<title>Qwirkle: Globals</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">Qwirkle
    </div>
   </td>
  </tr>
@@ -67,6 +67,9 @@ $(function() {
 <li>add_link_at()
 : <a class="el" href="prototype_8h.html#a20aa4740b26f9b88a9aebb2dfebb1b48">prototype.h</a>
 </li>
+<li>ask_save()
+: <a class="el" href="main_8c.html#a038eebc84a021c4a0276f8c298a8a7d5">main.c</a>
+</li>
 </ul>
 
 
@@ -79,7 +82,7 @@ $(function() {
 
 <h3><a id="index_c"></a>- c -</h3><ul>
 <li>chcmp()
-: <a class="el" href="prototype_8h.html#a5c40e30dc628cc7aeeb6f9cca1286df1">prototype.h</a>
+: <a class="el" href="tools_8h.html#a5c40e30dc628cc7aeeb6f9cca1286df1">tools.h</a>
 </li>
 <li>collider()
 : <a class="el" href="main_8c.html#a7daf1b3ad3e0fe762725d3b46d0eb4a7">main.c</a>
@@ -90,6 +93,9 @@ $(function() {
 <h3><a id="index_d"></a>- d -</h3><ul>
 <li>dialog()
 : <a class="el" href="main_8c.html#a941a9df0ea0b4ba649c280e469b55881">main.c</a>
+</li>
+<li>display_ask_save()
+: <a class="el" href="display_8h.html#a28cf1896b0e87c6054cb5ae945e22210">display.h</a>
 </li>
 <li>display_bye()
 : <a class="el" href="display_8h.html#a067cb28bb0fa651ad1ca8d9eaadb0460">display.h</a>
@@ -105,6 +111,9 @@ $(function() {
 </li>
 <li>display_options()
 : <a class="el" href="display_8h.html#ac2b6fabcb23b1aafa3bb7f16566a447b">display.h</a>
+</li>
+<li>display_quit()
+: <a class="el" href="display_8h.html#a43f427008f8541a9a51203d23f8940e7">display.h</a>
 </li>
 <li>display_score()
 : <a class="el" href="display_8h.html#aa4271c3b184603eb85b5fae294942b74">display.h</a>
@@ -128,6 +137,12 @@ $(function() {
 <li>false
 : <a class="el" href="struct_8h.html#af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c">struct.h</a>
 </li>
+<li>first_play
+: <a class="el" href="main_8c.html#ab0afb8e83082d9b6f408049515638000">main.c</a>
+</li>
+<li>free_moves()
+: <a class="el" href="prototype_8h.html#ac0a694090d3cd28aa265193e8189d3e5">prototype.h</a>
+</li>
 </ul>
 
 
@@ -136,16 +151,10 @@ $(function() {
 : <a class="el" href="struct_8h.html#a57beea1c9e0c7a4bdd2e77db0b8ae2bd">struct.h</a>
 </li>
 <li>get_key()
-: <a class="el" href="prototype_8h.html#a044e319951a5dbcec8809abe60c0c35b">prototype.h</a>
+: <a class="el" href="tools_8h.html#a044e319951a5dbcec8809abe60c0c35b">tools.h</a>
 </li>
 <li>get_link_at()
 : <a class="el" href="prototype_8h.html#a0a8ac7c798d5c0448c439ccf349b9307">prototype.h</a>
-</li>
-<li>get_score_play()
-: <a class="el" href="main_8c.html#afa1e740a70c75b622a8a5c842644e88d">main.c</a>
-</li>
-<li>groupe_prev_color_length()
-: <a class="el" href="main_8c.html#ad263485b4e73f10b0929a072c5a05161">main.c</a>
 </li>
 </ul>
 
@@ -177,10 +186,10 @@ $(function() {
 : <a class="el" href="prototype_8h.html#a647e47c0ec5a97a0594377e25a2bb9b9">prototype.h</a>
 </li>
 <li>log_char()
-: <a class="el" href="prototype_8h.html#a2f4e8f124913ff9d72c8f625c5cd47ba">prototype.h</a>
+: <a class="el" href="tools_8h.html#a2f4e8f124913ff9d72c8f625c5cd47ba">tools.h</a>
 </li>
 <li>log_int()
-: <a class="el" href="prototype_8h.html#a17460df00921c092d17a5d249591a968">prototype.h</a>
+: <a class="el" href="tools_8h.html#a17460df00921c092d17a5d249591a968">tools.h</a>
 </li>
 </ul>
 
@@ -206,12 +215,18 @@ $(function() {
 : <a class="el" href="prototype_8h.html#afea0aaae6bd67b8a9fedb219831a4e54">prototype.h</a>
 </li>
 <li>new_struct()
-: <a class="el" href="prototype_8h.html#a863b17e48d265ead5346f249166fa337">prototype.h</a>
+: <a class="el" href="prototype_8h.html#a63f1f0c3e07aaa2760a276d2dd21c7f4">prototype.h</a>
 </li>
 </ul>
 
 
 <h3><a id="index_p"></a>- p -</h3><ul>
+<li>parse_game()
+: <a class="el" href="main_8c.html#a4abba91605d33c58ab146b99fb8a325a">main.c</a>
+</li>
+<li>parse_score()
+: <a class="el" href="main_8c.html#aba283e2d512d7146e10eb3aa26bbd48b">main.c</a>
+</li>
 <li>play()
 : <a class="el" href="main_8c.html#afff890afd4e7e90dcbce7b28d7ff6403">main.c</a>
 </li>
@@ -236,8 +251,12 @@ $(function() {
 <li>push_link()
 : <a class="el" href="prototype_8h.html#a3d137e28e9f0d8e4da338e656203cfa8">prototype.h</a>
 </li>
-<li>puts()
-: <a class="el" href="ascii_8c.html#af91378a898ef03004583495140034a58">ascii.c</a>
+</ul>
+
+
+<h3><a id="index_q"></a>- q -</h3><ul>
+<li>quit()
+: <a class="el" href="main_8c.html#af0de4f6cbbddd00a562f169a5e703713">main.c</a>
 </li>
 </ul>
 
@@ -247,12 +266,18 @@ $(function() {
 : <a class="el" href="prototype_8h.html#a46a253ea090e44e12fabf38e89e88249">prototype.h</a>
 </li>
 <li>reset_color()
-: <a class="el" href="prototype_8h.html#a4bc9f1f5ef0fc8b14c38fc821071c037">prototype.h</a>
+: <a class="el" href="tools_8h.html#a4bc9f1f5ef0fc8b14c38fc821071c037">tools.h</a>
 </li>
 </ul>
 
 
 <h3><a id="index_s"></a>- s -</h3><ul>
+<li>save()
+: <a class="el" href="main_8c.html#aae2c382151ef7c9aa913361172b30db6">main.c</a>
+</li>
+<li>score
+: <a class="el" href="struct_8h.html#ae07d95e3f2d8ca36b6d3000926eab284">struct.h</a>
+</li>
 <li>scorer()
 : <a class="el" href="main_8c.html#a00214a6e1e2db69dc62bd79dbcfc50c9">main.c</a>
 </li>
@@ -262,20 +287,20 @@ $(function() {
 <li>select_player_number()
 : <a class="el" href="main_8c.html#ab2c7830422d5326c2fc1a6226370766c">main.c</a>
 </li>
+<li>select_tuile()
+: <a class="el" href="main_8c.html#a14d3c7439df7cd8463a8071ccaacb7c9">main.c</a>
+</li>
 <li>set_color()
-: <a class="el" href="prototype_8h.html#ab74a1f05f96a1bd03fe9744443cb9a92">prototype.h</a>
+: <a class="el" href="tools_8h.html#ab74a1f05f96a1bd03fe9744443cb9a92">tools.h</a>
 </li>
 <li>set_coord()
-: <a class="el" href="prototype_8h.html#a44f9597b16e0cce8da6ae52fd4429c60">prototype.h</a>
-</li>
-<li>set_score_play()
-: <a class="el" href="main_8c.html#a104645b10ceff66b9905d5088ba0af09">main.c</a>
+: <a class="el" href="tools_8h.html#a44f9597b16e0cce8da6ae52fd4429c60">tools.h</a>
 </li>
 <li>set_tuile()
-: <a class="el" href="main_8c.html#ae57f74b32ed09c5db3d311fdc53528a5">main.c</a>
+: <a class="el" href="main_8c.html#a8541b94ba42c202516f75800a9d803ca">main.c</a>
 </li>
 <li>shuffle_list()
-: <a class="el" href="main_8c.html#a4c529f28a970d0ad081f3a1b98723c76">main.c</a>
+: <a class="el" href="main_8c.html#aae195fc897ca3d639fbaccd79e8a418a">main.c</a>
 </li>
 </ul>
 

@@ -41,11 +41,18 @@ typedef struct Game
 {
   int mode;
   int nb_player;
+  int play;
   list * deck;
   player * players;
   move * moves;
   tuile field[26][12];
 } game;
+
+typedef struct Score
+{
+  char pseudo[15];
+  int score_game;
+} score;
 
 typedef enum
 {
