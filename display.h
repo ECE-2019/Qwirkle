@@ -74,11 +74,12 @@ void display_options()
   puts("\tLe Qwirkle est un jeu qui se joue a plusieur (2-4 joueurs)");
   puts("\tJeu tactique d'association et de logique. 2 à 4 joueurs.");
   puts("\tChaque joueur dispose de 6 tuiles.");
-  puts("\tA son tour il en place un maximum à condition de les poser sur une seule ligne,");
-  puts("\tavec un caractère commun: la couleur ou la forme.");
-  puts("\tA chaque tour on marque les points des lignes que l'on a complétées.");
-  puts("\tL'astuce consiste à placer ses pièces à des endroits stratégiques,");
+  puts("\tA son tour il en place un maximum e condition de les poser sur une seule ligne,");
+  puts("\tavec un caractere commun: la couleur ou la forme.");
+  puts("\tA chaque tour on marque les points des lignes que l'on a completees.");
+  puts("\tL'astuce consiste à placer ses pieces à des endroits strategiques,");
   puts("\tcomme par exemple des intersections, pour marquer un maximum de points");
+  puts("\tCommander le immediatement en appuyant sur entree !");
   while (!getch()) {
     return;
   }

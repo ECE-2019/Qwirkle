@@ -51,7 +51,7 @@ int main()
   log_char("[OK] Test log_int() : ");
   log_int(0);
   display_welcome();
-  //system("start src/prince_loop.wav");
+  system("start src/prince_loop.wav");
   menu();
 
   return 0;
@@ -92,6 +92,7 @@ void menu()
           break;
           case 7:
           display_bye();
+          exit(0);
           break;
         }
       }
@@ -419,7 +420,7 @@ void play(game * game)
           drawed_tuile = draw_tuile(game);
           if (drawed_tuile) {
             push_link(game->players[i].hand, drawed_tuile);
-          }else{
+          }else if(!drawed_tuile && game->players[i].hand == NULL){
             dialog("The deck is empty !");
             exit = 1; // fin du jeu
             break;

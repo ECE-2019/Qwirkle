@@ -9394,3 +9394,34 @@ Link prev_form found !
 [OK] Test log_char() : a
 [OK] Test log_int() : 0
 Size list : 36
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Score : 1
+Score : 1
+Score : 1
+21
+File created okay
+Size : 21
+File created okay
+Size : link tuile down -> same form -> link tuile right -> Link next_form found !
+lflg
+First link
+Move
+{
+	lflg
+}
+Wasn't played !
+Score : 1
+19
+File created okay
+Size : [OK] Test log_char() : a
+[OK] Test log_int() : 0
+[OK] Test log_char() : a
+[OK] Test log_int() : 0
+Size list : 36
+Score : 1

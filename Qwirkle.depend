@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1574088228 source:c:\users\zedex\desktop\qwirkle\main.c
+1574092401 source:c:\users\zedex\desktop\qwirkle\main.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
@@ -16,7 +16,7 @@
 1574042160 c:\users\zedex\desktop\qwirkle\prototype.h
 	"tools.h"
 
-1574087756 c:\users\zedex\desktop\qwirkle\display.h
+1574092177 c:\users\zedex\desktop\qwirkle\display.h
 	"prototype.h"
 
 1573856118 source:c:\users\zedex\desktop\qwirkle\prototype.c
